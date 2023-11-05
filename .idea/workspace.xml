@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="728020e3-ccff-4f18-ba8c-e4eb445b61be" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Main/LoginSignUp/LoginSignUp.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main/LoginSignUp/src/LoginApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/LoginSignUp/src/LoginApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/LoginSignUp/src/LoginApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/LoginSignUp/src/SignUpApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/LoginSignUp/src/SignUpApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,12 +34,16 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2XfdD5MdQDECxaoc5aLXyV8i4Wc" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -89,12 +92,15 @@
       <workItem from="1699023945758" duration="4000" />
       <workItem from="1699023960479" duration="4000" />
       <workItem from="1699026184621" duration="15000" />
-      <workItem from="1699197720300" duration="1230000" />
+      <workItem from="1699197720300" duration="1503000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
