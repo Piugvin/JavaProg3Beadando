@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/JavaProg3.Beadando.iml" filepath="$PROJECT_DIR$/.idea/JavaProg3.Beadando.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Main/LoginSignUp/LoginSignUp.iml" filepath="$PROJECT_DIR$/Main/LoginSignUp/LoginSignUp.iml" />
       <module fileurl="file://$PROJECT_DIR$/Main/Main.iml" filepath="$PROJECT_DIR$/Main/Main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Main/SQL/SQL.iml" filepath="$PROJECT_DIR$/Main/SQL/SQL.iml" />
     </modules>
   </component>
 </project>

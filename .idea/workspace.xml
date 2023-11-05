@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="728020e3-ccff-4f18-ba8c-e4eb445b61be" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/src/SQLConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/src/SignUpApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/LoginSignUp/src/LoginApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/LoginSignUp/src/LoginApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/LoginSignUp/src/SignUpApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/LoginSignUp/src/SignUpApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/LoginSignUp/src/LoginApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/LoginApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/LoginSignUp/src/SignUpApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/SQL/SQL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Main/database/SQL.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/SQL/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/database/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/SQL/src/sqlconnection.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +69,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Java\JavaProg3.Beadando\Main\src" />
       <recent name="D:\Java\JavaProg3.Beadando\Main" />
       <recent name="D:\Java\JavaProg3.Beadando" />
       <recent name="D:\Java\JavaProg3.Beadando\SQL\src" />
@@ -92,7 +100,7 @@
       <workItem from="1699023945758" duration="4000" />
       <workItem from="1699023960479" duration="4000" />
       <workItem from="1699026184621" duration="15000" />
-      <workItem from="1699197720300" duration="1503000" />
+      <workItem from="1699197720300" duration="4020000" />
     </task>
     <servers />
   </component>
@@ -106,7 +114,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Main/SQL/src/Main.java</url>
+          <url>file://$PROJECT_DIR$/Main/database/src/Main.java</url>
           <line>13</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
