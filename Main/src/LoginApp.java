@@ -1,31 +1,37 @@
+import java.sql.*;
 import java.util.Scanner;
 
 public class LoginApp {
-
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        System.out.println("Bejelentkezés!");
+        try {
+            //Adatbázis csatlakozás
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/your_database", "username", "password");
 
-        System.out.println("Welcome to Login");
-        System.out.println("Please enter your login credentials:");
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Kérem adja meg a felhasználónevét:");
+            String username = scanner.nextLine();
+            System.out.println("Kérem adja meg a jelszavát:");
+            String password = scanner.nextLine();
 
-        System.out.print("Username: ");
-        String username = scanner.nextLine();
+            String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, username);
+            preparedStatement.setString(2, password);
 
-        System.out.print("Password: ");
-        String password = scanner.nextLine();
+            ResultSet resultSet = preparedStatement.executeQuery();
 
-        if (isValidLogin(username, password)) {
-            System.out.println("\nLogin successful. Welcome, " + username + "!");
-
-        } else {
-            System.out.println("\nInvalid credentials. Login failed.");
-
+            if (resultSet.next()) {
+                System.out.println("Login successful! Welcome, " + username + "!");
+            } else {
+                System.out.println("\nHibás felhasználónév vagy jelszó. Sikeretelen bejelentkezés.");
+            }
+            // Close resources
+            resultSet.close();
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-    }
-
-
-    private static boolean isValidLogin(String username, String password) {
-
-        return username.equals("admin") && password.equals("password123");
     }
 }
