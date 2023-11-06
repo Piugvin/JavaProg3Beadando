@@ -7,7 +7,6 @@
     <list default="true" id="8d00fe63-c669-40d9-a5ef-6289ca882925" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/Main/src/SQLConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/SQLConnection.java" afterDir="false" />
 =======
       <change beforePath="$PROJECT_DIR$/Main/src/Encryption.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Encryption.java" afterDir="false" />
