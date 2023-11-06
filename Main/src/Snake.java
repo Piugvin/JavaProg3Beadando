@@ -49,6 +49,8 @@ class GamePanel extends JPanel implements ActionListener{
     boolean running = false;
     Timer timer;
     Random random;
+    int speedMultiplier = 1;
+    int applesForGameOver = 4;
 
     GamePanel(){
         random = new Random();
@@ -132,8 +134,15 @@ class GamePanel extends JPanel implements ActionListener{
             bodyParts++;
             applesEaten++;
             newApple();
+            if (applesEaten % applesForGameOver == 0) {
+            running = false;
+            timer.stop();
+            } else {
+            speedMultiplier = applesEaten / applesForGameOver + 1;
+            timer.setDelay(DELAY / speedMultiplier);
         }
     }
+  }
     public void checkCollisions() {
         //checks if head collides with body
         for(int i = bodyParts;i>0;i--) {
