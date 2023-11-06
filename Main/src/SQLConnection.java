@@ -9,9 +9,9 @@ public class SQLConnection {
 
         try {
 
-            String url = "jdbc:mysql://localhost:3306/my_database";
-            String username = "your_username";
-            String password = "your_password";
+            String url = "jdbc:mysql://80.211.205.244:3306/JavaDB";
+            String username = "java";
+            String password = "B@wy5PQy";
 
 
             connection = DriverManager.getConnection(url, username, password);
