@@ -6,11 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="8d00fe63-c669-40d9-a5ef-6289ca882925" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Snake.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -24,6 +28,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -77,7 +84,7 @@
       <updated>1699262461624</updated>
       <workItem from="1699262469986" duration="1457000" />
       <workItem from="1699264340386" duration="422000" />
-      <workItem from="1699291653582" duration="1418000" />
+      <workItem from="1699291653582" duration="2125000" />
     </task>
     <servers />
   </component>
