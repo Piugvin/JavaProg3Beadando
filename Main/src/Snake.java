@@ -1,191 +1,216 @@
-import javafx.animation.AnimationTimer;
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
-
-import java.util.ArrayList;
-import java.util.List;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.Random;
-
-public class Snake extends Application {
-    public static final int WINDOW_WIDTH = 600;
-    public static final int WINDOW_HEIGHT = 600;
-    public static final int TILE_SIZE = 20;
-
-    private List<Coordinate> snake;
-    private Coordinate food;
-    private Direction currentDirection;
-    private Direction nextDirection;
-    private boolean isGameOver;
-
-    public Snake() {
-        snake = new ArrayList<>();
-        snake.add(new Coordinate(5, 5)); // Initial snake position
-        food = generateFoodPosition();
-        currentDirection = Direction.RIGHT;
-        nextDirection = Direction.RIGHT;
-        isGameOver = false;
-    }
+public class Snake {
 
     public static void main(String[] args) {
-        launch(args);
+
+        new GameFrame();
     }
+}
+//*****************************************
 
-    @Override
-    public void start(Stage primaryStage) {
-        Pane root = new Pane();
-        Scene scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
 
-        Canvas canvas = new Canvas(WINDOW_WIDTH, WINDOW_HEIGHT);
-        root.getChildren().add(canvas);
-        GraphicsContext gc = canvas.getGraphicsContext2D();
+class GameFrame extends JFrame{
 
-        scene.setOnKeyPressed(event -> {
-            switch (event.getCode()) {
-                case UP:
-                    if (currentDirection != Direction.DOWN)
-                        nextDirection = Direction.UP;
-                    break;
-                case DOWN:
-                    if (currentDirection != Direction.UP)
-                        nextDirection = Direction.DOWN;
-                    break;
-                case LEFT:
-                    if (currentDirection != Direction.RIGHT)
-                        nextDirection = Direction.LEFT;
-                    break;
-                case RIGHT:
-                    if (currentDirection != Direction.LEFT)
-                        nextDirection = Direction.RIGHT;
-                    break;
-            }
-        });
+    GameFrame(){
 
-        new AnimationTimer() {
-            long lastUpdate = 0;
+        this.add(new GamePanel());
+        this.setTitle("Snake");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setResizable(false);
+        this.pack();
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
 
-            @Override
-            public void handle(long now) {
-                if (now - lastUpdate >= 100_000_000) { // Update every 100ms
-                    if (!isGameOver) {
-                        moveSnake();
-                        checkCollisions();
-                        drawGame(gc);
-                        lastUpdate = now;
-                    }
+    }
+}
+//*****************************************
+
+
+class GamePanel extends JPanel implements ActionListener{
+
+    static final int SCREEN_WIDTH = 1300;
+    static final int SCREEN_HEIGHT = 750;
+    static final int UNIT_SIZE = 50;
+    static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/(UNIT_SIZE*UNIT_SIZE);
+    static final int DELAY = 175;
+    final int x[] = new int[GAME_UNITS];
+    final int y[] = new int[GAME_UNITS];
+    int bodyParts = 6;
+    int applesEaten;
+    int appleX;
+    int appleY;
+    char direction = 'R';
+    boolean running = false;
+    Timer timer;
+    Random random;
+
+    GamePanel(){
+        random = new Random();
+        this.setPreferredSize(new Dimension(SCREEN_WIDTH,SCREEN_HEIGHT));
+        this.setBackground(Color.black);
+        this.setFocusable(true);
+        this.addKeyListener(new MyKeyAdapter());
+        startGame();
+    }
+    public void startGame() {
+        newApple();
+        running = true;
+        timer = new Timer(DELAY,this);
+        timer.start();
+    }
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        draw(g);
+    }
+    public void draw(Graphics g) {
+
+        if(running) {
+			/*
+			for(int i=0;i<SCREEN_HEIGHT/UNIT_SIZE;i++) {
+				g.drawLine(i*UNIT_SIZE, 0, i*UNIT_SIZE, SCREEN_HEIGHT);
+				g.drawLine(0, i*UNIT_SIZE, SCREEN_WIDTH, i*UNIT_SIZE);
+			}
+			*/
+            g.setColor(Color.red);
+            g.fillOval(appleX, appleY, UNIT_SIZE, UNIT_SIZE);
+
+            for(int i = 0; i< bodyParts;i++) {
+                if(i == 0) {
+                    g.setColor(Color.green);
+                    g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
+                }
+                else {
+                    g.setColor(new Color(45,180,0));
+                    //g.setColor(new Color(random.nextInt(255),random.nextInt(255),random.nextInt(255)));
+                    g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
                 }
             }
-        }.start();
+            g.setColor(Color.red);
+            g.setFont( new Font("Ink Free",Font.BOLD, 40));
+            FontMetrics metrics = getFontMetrics(g.getFont());
+            g.drawString("Score: "+applesEaten, (SCREEN_WIDTH - metrics.stringWidth("Score: "+applesEaten))/2, g.getFont().getSize());
+        }
+        else {
+            gameOver(g);
+        }
 
-        primaryStage.setTitle("Snake Game");
-        primaryStage.setScene(scene);
-        primaryStage.show();
     }
-
-    private void moveSnake() {
-        if (currentDirection != nextDirection) {
-            currentDirection = nextDirection;
+    public void newApple(){
+        appleX = random.nextInt((int)(SCREEN_WIDTH/UNIT_SIZE))*UNIT_SIZE;
+        appleY = random.nextInt((int)(SCREEN_HEIGHT/UNIT_SIZE))*UNIT_SIZE;
+    }
+    public void move(){
+        for(int i = bodyParts;i>0;i--) {
+            x[i] = x[i-1];
+            y[i] = y[i-1];
         }
 
-        Coordinate head = snake.get(0);
-        Coordinate newHead;
-
-        switch (currentDirection) {
-            case UP:
-                newHead = new Coordinate(head.getX(), head.getY() - 1);
+        switch(direction) {
+            case 'U':
+                y[0] = y[0] - UNIT_SIZE;
                 break;
-            case DOWN:
-                newHead = new Coordinate(head.getX(), head.getY() + 1);
+            case 'D':
+                y[0] = y[0] + UNIT_SIZE;
                 break;
-            case LEFT:
-                newHead = new Coordinate(head.getX() - 1, head.getY());
+            case 'L':
+                x[0] = x[0] - UNIT_SIZE;
                 break;
-            case RIGHT:
-                newHead = new Coordinate(head.getX() + 1, head.getY());
+            case 'R':
+                x[0] = x[0] + UNIT_SIZE;
                 break;
-            default:
-                newHead = head;
         }
 
-        snake.add(0, newHead);
-
-        if (newHead.equals(food)) {
-            food = generateFoodPosition();
-        } else {
-            snake.remove(snake.size() - 1);
+    }
+    public void checkApple() {
+        if((x[0] == appleX) && (y[0] == appleY)) {
+            bodyParts++;
+            applesEaten++;
+            newApple();
         }
     }
-
-    private void checkCollisions() {
-        Coordinate head = snake.get(0);
-
-        if (head.getX() < 0 || head.getX() >= WINDOW_WIDTH / TILE_SIZE ||
-                head.getY() < 0 || head.getY() >= WINDOW_HEIGHT / TILE_SIZE) {
-            isGameOver = true;
-        }
-
-        for (int i = 1; i < snake.size(); i++) {
-            if (head.equals(snake.get(i))) {
-                isGameOver = true;
-                break;
+    public void checkCollisions() {
+        //checks if head collides with body
+        for(int i = bodyParts;i>0;i--) {
+            if((x[0] == x[i])&& (y[0] == y[i])) {
+                running = false;
             }
         }
-    }
-
-    private Coordinate generateFoodPosition() {
-        Random random = new Random();
-        int x, y;
-        do {
-            x = random.nextInt(WINDOW_WIDTH / TILE_SIZE);
-            y = random.nextInt(WINDOW_HEIGHT / TILE_SIZE);
-        } while (snake.contains(new Coordinate(x, y)));
-        return new Coordinate(x, y);
-    }
-
-    private void drawGame(GraphicsContext gc) {
-        gc.clearRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
-
-        gc.setFill(Color.RED);
-        gc.fillRect(food.getX() * TILE_SIZE, food.getY() * TILE_SIZE, TILE_SIZE, TILE_SIZE);
-
-        gc.setFill(Color.GREEN);
-        for (Coordinate segment : snake) {
-            gc.fillRect(segment.getX() * TILE_SIZE, segment.getY() * TILE_SIZE, TILE_SIZE, TILE_SIZE);
+        //check if head touches left border
+        if(x[0] < 0) {
+            running = false;
+        }
+        //check if head touches right border
+        if(x[0] > SCREEN_WIDTH) {
+            running = false;
+        }
+        //check if head touches top border
+        if(y[0] < 0) {
+            running = false;
+        }
+        //check if head touches bottom border
+        if(y[0] > SCREEN_HEIGHT) {
+            running = false;
         }
 
-        if (isGameOver) {
-            gc.setFill(Color.RED);
-            gc.fillText("Game Over", 250, 300);
+        if(!running) {
+            timer.stop();
         }
     }
+    public void gameOver(Graphics g) {
+        //Score
+        g.setColor(Color.red);
+        g.setFont( new Font("Ink Free",Font.BOLD, 40));
+        FontMetrics metrics1 = getFontMetrics(g.getFont());
+        g.drawString("Score: "+applesEaten, (SCREEN_WIDTH - metrics1.stringWidth("Score: "+applesEaten))/2, g.getFont().getSize());
+        //Game Over text
+        g.setColor(Color.red);
+        g.setFont( new Font("Ink Free",Font.BOLD, 75));
+        FontMetrics metrics2 = getFontMetrics(g.getFont());
+        g.drawString("Game Over", (SCREEN_WIDTH - metrics2.stringWidth("Game Over"))/2, SCREEN_HEIGHT/2);
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
 
-    public enum Direction {
-        UP, DOWN, LEFT, RIGHT
+        if(running) {
+            move();
+            checkApple();
+            checkCollisions();
+        }
+        repaint();
     }
 
-    public static class Coordinate {
-        private final int x;
-        private final int y;
-
-        public Coordinate(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-
-        public int getX() {
-            return x;
-        }
-
-        public int getY() {
-            return y;
-        }
-
-        public boolean equals(Coordinate other) {
-            return this.x == other.getX() && this.y == other.getY();
+    public class MyKeyAdapter extends KeyAdapter{
+        @Override
+        public void keyPressed(KeyEvent e) {
+            switch(e.getKeyCode()) {
+                case KeyEvent.VK_LEFT:
+                    if(direction != 'R') {
+                        direction = 'L';
+                    }
+                    break;
+                case KeyEvent.VK_RIGHT:
+                    if(direction != 'L') {
+                        direction = 'R';
+                    }
+                    break;
+                case KeyEvent.VK_UP:
+                    if(direction != 'D') {
+                        direction = 'U';
+                    }
+                    break;
+                case KeyEvent.VK_DOWN:
+                    if(direction != 'U') {
+                        direction = 'D';
+                    }
+                    break;
+            }
         }
     }
 }
+//*****************************************
