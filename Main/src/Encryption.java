@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class Encryption {
     public static void main(String[] args) {
-        String chars = " " + "0123456789" + "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String chars = " " + "0123456789" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         List<Character> charList = new ArrayList<>();
         for (char c : chars.toCharArray()) {
             charList.add(c);
@@ -14,7 +14,7 @@ public class Encryption {
         List<Character> key = new ArrayList<>(charList);
         Collections.shuffle(key);
 
-        String plainText ="Valami123";
+        String plainText ="Something1234";
         int score = 4;
         Set<Character> processedChars = new HashSet<>();
         Set<Character> eredetiChars = new HashSet<>();
