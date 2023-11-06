@@ -41,7 +41,7 @@ class GamePanel extends JPanel implements ActionListener{
     static final int DELAY = 175;
     final int x[] = new int[GAME_UNITS];
     final int y[] = new int[GAME_UNITS];
-    int bodyParts = 6;
+    int bodyParts = 6; // jelszó határozza majd meg
     int applesEaten;
     int appleX;
     int appleY;
@@ -49,15 +49,18 @@ class GamePanel extends JPanel implements ActionListener{
     boolean running = false;
     Timer timer;
     Random random;
-
+    int speedMultiplier = 1;
+    int applesForGameOver = 4;
     GamePanel(){
         random = new Random();
+
         this.setPreferredSize(new Dimension(SCREEN_WIDTH,SCREEN_HEIGHT));
         this.setBackground(Color.black);
         this.setFocusable(true);
         this.addKeyListener(new MyKeyAdapter());
         startGame();
     }
+
     public void startGame() {
         newApple();
         running = true;
@@ -105,6 +108,8 @@ class GamePanel extends JPanel implements ActionListener{
         appleX = random.nextInt((int)(SCREEN_WIDTH/UNIT_SIZE))*UNIT_SIZE;
         appleY = random.nextInt((int)(SCREEN_HEIGHT/UNIT_SIZE))*UNIT_SIZE;
     }
+
+
     public void move(){
         for(int i = bodyParts;i>0;i--) {
             x[i] = x[i-1];
@@ -128,10 +133,17 @@ class GamePanel extends JPanel implements ActionListener{
 
     }
     public void checkApple() {
-        if((x[0] == appleX) && (y[0] == appleY)) {
+        if ((x[0] == appleX) && (y[0] == appleY)) {
             bodyParts++;
             applesEaten++;
             newApple();
+            if (applesEaten % applesForGameOver == 0) {
+                running = false;
+                timer.stop();
+            } else {
+                speedMultiplier = applesEaten / applesForGameOver + 1;
+                timer.setDelay(DELAY / speedMultiplier);
+            }
         }
     }
     public void checkCollisions() {
