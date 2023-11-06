@@ -98,7 +98,7 @@ public class Encryption {
         StringBuilder plainText = new StringBuilder();
         for (char letter : cipherText.toCharArray()) {
             int index = key.indexOf(letter);
-            if (eredetiChars.contains(chars.get(index))) {
+            if (eredetiChars.contains(chars.get(index)) || key.contains(chars.get(index))) {
                 plainText.append(chars.get(index));
             } else {
                 plainText.append(key.get(index));
@@ -106,4 +106,5 @@ public class Encryption {
         }
         return plainText.toString();
     }
+
 }
