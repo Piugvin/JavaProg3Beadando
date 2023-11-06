@@ -19,7 +19,7 @@ public class Encryption {
         Set<Character> processedChars = new HashSet<>();
         Set<Character> eredetiChars = new HashSet<>();
 
-        String encryptedText = tikositasPontszerint(score, plainText);
+        String encryptedText = tikositasPontszerint(score, plainText,processedChars,eredetiChars,charList,key);
         String felh ="Felhasznalo";
 
         System.out.println("original message : " + plainText);
@@ -77,15 +77,7 @@ public class Encryption {
         return cipherText.toString();
     }
 
-    public static String tikositasPontszerint(int score, String plainText) {
-        Set<Character> processedChars = new HashSet<>();
-        Set<Character> eredetiChars = new HashSet<>();
-        List<Character> chars = new ArrayList<>();
-        for (char c : " 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray()) {
-            chars.add(c);
-        }
-        List<Character> key = new ArrayList<>(chars);
-        Collections.shuffle(key);
+    public static String tikositasPontszerint(int score, String plainText, Set<Character> processedChars, Set<Character> eredetiChars, List<Character> chars, List<Character> key) {
 
         if (score >= 2) {
             plainText = szamTitkositas(plainText, processedChars, eredetiChars, chars, key);
