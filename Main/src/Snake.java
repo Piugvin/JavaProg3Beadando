@@ -226,14 +226,7 @@ class GamePanel extends JPanel implements ActionListener{
     }
 }
 //*****************************************
-=======
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.util.Random;
+
 public class Snake {
 
     public static void main(String[] args) {
@@ -451,5 +444,4 @@ class GamePanel extends JPanel implements ActionListener{
         }
     }
 }
-//*****************************************
->>>>>>> 1375b1e0c21117dc51b2e17f49077d28e6f57a20
+
