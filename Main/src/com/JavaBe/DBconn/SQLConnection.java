@@ -1,4 +1,4 @@
-package SQL;
+package com.JavaBe.DBconn;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
