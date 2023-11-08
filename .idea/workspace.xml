@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d00fe63-c669-40d9-a5ef-6289ca882925" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< Updated upstream
-      <change beforePath="$PROJECT_DIR$/Main/src/SQLConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/SQLConnection.java" afterDir="false" />
-=======
       <change beforePath="$PROJECT_DIR$/Main/src/Encryption.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Encryption.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main/src/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Snake.java" afterDir="false" />
->>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +61,7 @@
       <recent name="D:\Java\JavaProg3Beadando\Main\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SQLConnection">
+  <component name="RunManager" selected="Application.Encryption">
     <configuration name="Encryption" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Encryption" />
       <module name="Main" />
@@ -83,8 +78,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SQLConnection" />
         <item itemvalue="Application.Encryption" />
+        <item itemvalue="Application.SQLConnection" />
       </list>
     </recent_temporary>
   </component>
@@ -98,12 +93,12 @@
       <updated>1699262461624</updated>
       <workItem from="1699262469986" duration="1457000" />
       <workItem from="1699264340386" duration="422000" />
-<<<<<<< Updated upstream
       <workItem from="1699291653582" duration="2125000" />
       <workItem from="1699294843091" duration="450000" />
-=======
       <workItem from="1699291653582" duration="4620000" />
->>>>>>> Stashed changes
+      <workItem from="1699449751102" duration="2806000" />
+      <workItem from="1699454030658" duration="599000" />
+      <workItem from="1699460058527" duration="6978000" />
     </task>
     <servers />
   </component>
