@@ -1,3 +1,5 @@
+package com.JavaBe.DBconn;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -10,7 +12,7 @@ public class SQLConnection {
         try {
 
             String url = "jdbc:mysql://80.211.205.244:3306/JavaDB";
-            String username = "java";
+            String username = "root";
             String password = "B@wy5PQy";
 
 
