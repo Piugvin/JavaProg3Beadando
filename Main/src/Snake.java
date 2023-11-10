@@ -225,35 +225,7 @@ class GamePanel extends JPanel implements ActionListener{
         }
     }
 }
-//*****************************************
-
-public class Snake {
-
-    public static void main(String[] args) {
-
-        new GameFrame();
-    }
-}
-//*****************************************
-
-
-class GameFrame extends JFrame{
-
-    GameFrame(){
-
-        this.add(new GamePanel());
-        this.setTitle("Snake");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setResizable(false);
-        this.pack();
-        this.setVisible(true);
-        this.setLocationRelativeTo(null);
-
-    }
-}
-//*****************************************
-
-
+/*
 class GamePanel extends JPanel implements ActionListener{
 
     static final int SCREEN_WIDTH = 1300;
@@ -295,12 +267,11 @@ class GamePanel extends JPanel implements ActionListener{
     public void draw(Graphics g) {
 
         if(running) {
-			/*
 			for(int i=0;i<SCREEN_HEIGHT/UNIT_SIZE;i++) {
 				g.drawLine(i*UNIT_SIZE, 0, i*UNIT_SIZE, SCREEN_HEIGHT);
 				g.drawLine(0, i*UNIT_SIZE, SCREEN_WIDTH, i*UNIT_SIZE);
 			}
-			*/
+
             g.setColor(Color.red);
             g.fillOval(appleX, appleY, UNIT_SIZE, UNIT_SIZE);
 
@@ -443,5 +414,5 @@ class GamePanel extends JPanel implements ActionListener{
             }
         }
     }
-}
+}*/
 

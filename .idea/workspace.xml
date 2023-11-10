@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="f26bff6c-861e-407b-bc02-0cb183212e2a" name="Changes" comment="" />
-=======
-    <list default="true" id="f26bff6c-861e-407b-bc02-0cb183212e2a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/LoginSignUp/LoginApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/LoginSignUp/LoginApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/LoginSignUp/SignUpApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/LoginSignUp/SignUpApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/SQL/SQLConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/com/JavaBe/DBconn/SQLConnection.java" afterDir="false" />
-    </list>
->>>>>>> parent of 49025fb (java)
+    <list default="true" id="d6c32e99-e4a1-47c5-b73b-0ba007c6a14a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,31 +29,30 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-<<<<<<< HEAD
+
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
     &quot;Repository.Attach.Annotations&quot;: &quot;true&quot;,
     &quot;Repository.Attach.JavaDocs&quot;: &quot;true&quot;,
     &quot;Repository.Attach.Sources&quot;: &quot;true&quot;,
 =======
->>>>>>> parent of 49025fb (java)
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; parent of 49025fb (java)
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-<<<<<<< HEAD
+
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
 =======
->>>>>>> parent of 49025fb (java)
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; parent of 49025fb (java)
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-<<<<<<< HEAD
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+      &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
 =======
->>>>>>> parent of 49025fb (java)
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; parent of 49025fb (java)
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -73,7 +63,7 @@
     ]
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.com.JavaBe.DBconn.SQLConnection">
     <configuration name="SQLConnection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DBconn.SQLConnection" />
       <module name="Main" />
@@ -81,8 +71,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.JavaBe.DBconn.SQLConnection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.JavaBe.DBconn.SQLConnection" />
+      <module name="Main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.JavaBe.DBconn.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.com.JavaBe.DBconn.SQLConnection" />
         <item itemvalue="Application.SQLConnection" />
       </list>
     </recent_temporary>
@@ -97,13 +101,10 @@
       <updated>1699367524009</updated>
       <workItem from="1699367527249" duration="62000" />
       <workItem from="1699367948914" duration="153000" />
-<<<<<<< HEAD
       <workItem from="1699369972692" duration="8000" />
       <workItem from="1699370781862" duration="372000" />
       <workItem from="1699372469197" duration="49000" />
       <workItem from="1699372721600" duration="20000" />
-=======
->>>>>>> parent of 49025fb (java)
     </task>
     <servers />
   </component>
