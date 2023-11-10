@@ -11,36 +11,23 @@ import java.util.Properties;
 
 public class SQLConnection {
 
-    public static void main(String[] args) throws RuntimeException {
+    public static void main(String[] args) throws RuntimeException, FileNotFoundException {
         final Properties properties = new Properties();
         Connection connection = null;
 
-        try (FileInputStream input = new FileInputStream("src/main/resources/db.properties")) {
-
+        try (FileInputStream input = new FileInputStream("src/Databese Configuration/DB.properties")) {
+            properties.load(input);
             String url = properties.getProperty("dburl");
             String username = properties.getProperty("username");
             String password = properties.getProperty("password");
             try {
                 connection = DriverManager.getConnection(url, username, password);
                 Statement myStatement = connection.createStatement();
-                if (connection != null) {
-                    System.out.println("Connected to the database!");
-                }
+                System.out.println("Sikeres kapcsolodás! ");
 
             } catch (SQLException e) {
-                System.out.println("Failed to connect to the database!");
-                e.printStackTrace();
-            } finally {
-                try {
-                    if (connection != null && !connection.isClosed()) {
-                        connection.close();
-                    }
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+                System.out.println("Sikeretelen kapcsolat!");
             }
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
