@@ -15,7 +15,7 @@ public class SQLConnection {
         final Properties properties = new Properties();
         Connection connection = null;
 
-        try (FileInputStream input = new FileInputStream("src/Databese Configuration/DB.properties")) {
+        try (FileInputStream input = new FileInputStream("Main/src/Database Configuration/DB.properties")) {
             properties.load(input);
             String url = properties.getProperty("dburl");
             String username = properties.getProperty("username");
@@ -27,6 +27,8 @@ public class SQLConnection {
 
             } catch (SQLException e) {
                 System.out.println("Sikeretelen kapcsolat!");
+                System.err.println("JDBC Error: " + e.getMessage());
+                e.printStackTrace();
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
