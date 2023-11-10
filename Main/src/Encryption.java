@@ -13,7 +13,7 @@ public class Encryption {
         }
         List<Character> key = new ArrayList<>(charList);
         Collections.shuffle(key);
-
+        System.out.println(key);
         String plainText ="Valami123";
         int score = 4;
         Set<Character> processedChars = new HashSet<>();

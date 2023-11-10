@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d00fe63-c669-40d9-a5ef-6289ca882925" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/e0a3afad-564a-4f1b-b4ea-bf17a9ded0da.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/e0a3afad-564a-4f1b-b4ea-bf17a9ded0da/storage_v2/_src_/schema/JavaDB.QJ7Ugw.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/e0a3afad-564a-4f1b-b4ea-bf17a9ded0da/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/e0a3afad-564a-4f1b-b4ea-bf17a9ded0da/storage_v2/_src_/schema/mysql.osA4Bg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/e0a3afad-564a-4f1b-b4ea-bf17a9ded0da/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e0a3afad-564a-4f1b-b4ea-bf17a9ded0da.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e0a3afad-564a-4f1b-b4ea-bf17a9ded0da.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main/src/Encryption.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Encryption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/LoginApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/LoginSignUp/LoginApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/SQLConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/com/JavaBe/DBconn/SQLConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/SignUpApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/LoginSignUp/SignUpApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/Snake.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,18 +44,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Merging main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Java\JavaProg3Beadando\Main\src" />
@@ -113,6 +103,7 @@
       <workItem from="1699479017179" duration="734000" />
       <workItem from="1699479787022" duration="11000" />
       <workItem from="1699531983178" duration="59000" />
+      <workItem from="1699628922495" duration="1259000" />
     </task>
     <servers />
   </component>
