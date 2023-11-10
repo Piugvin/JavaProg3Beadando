@@ -4,25 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d00fe63-c669-40d9-a5ef-6289ca882925" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e0a3afad-564a-4f1b-b4ea-bf17a9ded0da.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e0a3afad-564a-4f1b-b4ea-bf17a9ded0da.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/Encryption.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Encryption.java" afterDir="false" />
-    </list>
+    <list default="true" id="d6c32e99-e4a1-47c5-b73b-0ba007c6a14a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -30,13 +16,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 1
+  &quot;associatedIndex&quot;: 5
 }</component>
-  <component name="ProjectId" id="2XnQcsCJ0TgQwojpbg6FBhPIAhG" />
+  <component name="ProjectId" id="2XqrbYJaAFfUxz90kltALJqpkKe" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -44,66 +27,84 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;true&quot;,
+=======
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; parent of 49025fb (java)
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
+=======
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; parent of 49025fb (java)
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+      &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+=======
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; parent of 49025fb (java)
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;,
+      &quot;sqlserver&quot;,
+      &quot;mariadb&quot;
+    ]
   }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Java\JavaProg3Beadando\Main\src" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.Encryption">
-    <configuration name="Encryption" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Encryption" />
+}</component>
+  <component name="RunManager" selected="Application.com.JavaBe.DBconn.SQLConnection">
+    <configuration name="SQLConnection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DBconn.SQLConnection" />
       <module name="Main" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SQLConnection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="SQLConnection" />
+    <configuration name="com.JavaBe.DBconn.SQLConnection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.JavaBe.DBconn.SQLConnection" />
       <module name="Main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.JavaBe.DBconn.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Encryption" />
+        <item itemvalue="Application.com.JavaBe.DBconn.SQLConnection" />
         <item itemvalue="Application.SQLConnection" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8d00fe63-c669-40d9-a5ef-6289ca882925" name="Changes" comment="" />
-      <created>1699262461624</created>
+      <changelist id="f26bff6c-861e-407b-bc02-0cb183212e2a" name="Changes" comment="" />
+      <created>1699367524009</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1699262461624</updated>
-      <workItem from="1699262469986" duration="1457000" />
-      <workItem from="1699264340386" duration="422000" />
-      <workItem from="1699291653582" duration="2125000" />
-      <workItem from="1699294843091" duration="450000" />
-      <workItem from="1699291653582" duration="4620000" />
-      <workItem from="1699449751102" duration="2806000" />
-      <workItem from="1699454030658" duration="599000" />
-      <workItem from="1699460058527" duration="6978000" />
-      <workItem from="1699467864336" duration="125000" />
-      <workItem from="1699479017179" duration="734000" />
-      <workItem from="1699479787022" duration="11000" />
-      <workItem from="1699531983178" duration="59000" />
-      <workItem from="1699628922495" duration="1259000" />
+      <updated>1699367524009</updated>
+      <workItem from="1699367527249" duration="62000" />
+      <workItem from="1699367948914" duration="153000" />
+      <workItem from="1699369972692" duration="8000" />
+      <workItem from="1699370781862" duration="372000" />
+      <workItem from="1699372469197" duration="49000" />
+      <workItem from="1699372721600" duration="20000" />
     </task>
     <servers />
   </component>
