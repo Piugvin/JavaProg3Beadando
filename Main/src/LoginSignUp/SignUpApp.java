@@ -1,14 +1,11 @@
 package LoginSignUp;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.*;
 import java.text.MessageFormat;
+import java.util.Properties;
 import java.util.Scanner;
-import com.JavaBe.DBconn.*;
-
-
 
 class SignUpApp {
 
@@ -26,20 +23,31 @@ class SignUpApp {
 
         System.out.print("Jelszó megerősítése: ");
         String confirmPassword = scanner.nextLine();
-
+        int err = 0;
         if (password == confirmPassword) {
             Connection connection = null;
             PreparedStatement preparedStatement = null;
+            final Properties properties = new Properties();
 
-            try {
-                String url = "jdbc:mysql://localhost:3306/my_database";
-                String sqlusername = "your_username";
-                String sqlpassword = "your_password";
-
-                connection = DriverManager.getConnection(url, sqlusername, sqlpassword);
-
-                if (connection != null) {
-                    System.out.println("Connected to the database!");
+            try (FileInputStream input = new FileInputStream("Main/src/Database Configuration/DB.properties")) {
+                properties.load(input);
+                String url = properties.getProperty("dburl");
+                String username1 = properties.getProperty("username");
+                String password1 = properties.getProperty("password");
+                connection = DriverManager.getConnection(url, username1, password1);
+                System.out.println("Sikeres kapcsolodás! ");
+            } catch (SQLException e) {
+                System.out.println("Sikeretelen kapcsolat!");
+                System.err.println("JDBC Error: " + e.getMessage());
+                e.printStackTrace();
+                err = 1;
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            if (err == 0) {
+                try {
                     String sql = MessageFormat.format("INSERT INTO users (username, password) VALUES (''{0}'', ''{1}''", username, password);
 
                     preparedStatement = connection.prepareStatement(sql);
@@ -53,21 +61,8 @@ class SignUpApp {
                     } else {
                         System.out.println("Failed to add the new user.");
                     }
-                }
-
-            } catch (SQLException e) {
-                System.out.println("Failed to connect to the database!");
-                e.printStackTrace();
-            } finally {
-                try {
-                    if (preparedStatement != null) {
-                        preparedStatement.close();
-                    }
-                    if (connection != null && !connection.isClosed()) {
-                        connection.close();
-                    }
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
             }
         }
