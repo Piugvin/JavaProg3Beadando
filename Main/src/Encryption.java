@@ -13,8 +13,8 @@ public class Encryption {
         }
         List<Character> key = new ArrayList<>(charList);
         Collections.shuffle(key);
-
-        String plainText ="Something1234";
+        System.out.println(key);
+        String plainText ="Valami123";
         int score = 4;
         Set<Character> processedChars = new HashSet<>();
         Set<Character> eredetiChars = new HashSet<>();
@@ -27,7 +27,7 @@ public class Encryption {
 
 
 
-        String decryptedText = visszafejtes(encryptedText, key, eredetiChars, charList);
+        String decryptedText = visszafejtes(encryptedText, key, eredetiChars, charList,processedChars,plainText);
 
         System.out.println("decrypted message: " + decryptedText);
     }
@@ -94,17 +94,39 @@ public class Encryption {
 
 
 
-    public static String visszafejtes(String cipherText, List<Character> key, Set<Character> eredetiChars, List<Character> chars) {
-        StringBuilder plainText = new StringBuilder();
-        for (char letter : cipherText.toCharArray()) {
+
+    public static String visszafejtes(String cipherText, List<Character> key, Set<Character> eredetiChars, List<Character> chars, Set<Character> processedChars, String plainText) {
+        //System.out.println(plainText);
+        StringBuilder original = new StringBuilder();
+        int indexPosition = 0;
+
+        for (int i = 0; i < cipherText.length(); i++) {
+            char letter = cipherText.charAt(i);
             int index = key.indexOf(letter);
-            if (eredetiChars.contains(chars.get(index)) || key.contains(chars.get(index))) {
-                plainText.append(chars.get(index));
+            char eredetiKarakter = plainText.charAt(i);
+
+            if (letter == eredetiKarakter) {
+                //original.append("Index " + indexPosition + ": " + eredetiKarakter + " (CipherText: " + letter + ", PlainText: " + eredetiKarakter + ")\n");
+                original.append(eredetiKarakter);
+            } else if (eredetiChars.contains(chars.get(index))) {
+                //original.append("Index " + indexPosition + ": " + chars.get(index) + " (CipherText: " + letter + ", PlainText: " + eredetiKarakter + ")\n");
+                original.append(chars.get(index));
             } else {
-                plainText.append(key.get(index));
+                //original.append("Index " + indexPosition + ": " + key.get(index) + " (CipherText: " + letter + ", PlainText: " + eredetiKarakter + ")\n");
+                original.append(key.get(index));
             }
+
+            indexPosition++;
         }
-        return plainText.toString();
+
+        return original.toString();
     }
+
+
+
+
+
+
+
 
 }
