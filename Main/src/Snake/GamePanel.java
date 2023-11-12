@@ -42,11 +42,11 @@ public class GamePanel extends JPanel implements ActionListener {
         this.setFocusable(true);
         this.addKeyListener(new MyKeyAdapter());
         try {
-            headUp = ImageIO.read(new File("Main/src/Snake.GamePanel.Snake/headup.png"));
-            headDown = ImageIO.read(new File("Main/src/Snake.GamePanel.Snake/headdown.png"));
-            headLeft = ImageIO.read(new File("Main/src/Snake.GamePanel.Snake/headl.png"));
-            headRight = ImageIO.read(new File("Main/src/Snake.GamePanel.Snake/headr.png"));
-            appleImage = ImageIO.read(new File("Main/src/Snake.GamePanel.Snake/apple.png"));
+            headUp = ImageIO.read(new File("Main/src/Snake/headup.png"));
+            headDown = ImageIO.read(new File("Main/src/Snake/headdown.png"));
+            headLeft = ImageIO.read(new File("Main/src/Snake/headl.png"));
+            headRight = ImageIO.read(new File("Main/src/Snake/headr.png"));
+            appleImage = ImageIO.read(new File("Main/src/Snake/apple.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
