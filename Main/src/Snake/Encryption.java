@@ -7,10 +7,6 @@ import java.util.List;
 import java.util.Set;
 
 public class Encryption {
-
-
-    static GamePanel apple = new GamePanel();
-
     public static String encrypt(int score, String plainText) {
         String chars = " " + "0123456789" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         List<Character> charList = new ArrayList<>();
