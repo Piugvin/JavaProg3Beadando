@@ -5,7 +5,10 @@ import java.util.List;
 import java.util.Set;
 
 public class Encryption {
-    public static void main(String[] args) {
+
+    
+    static GamePanel apple=new GamePanel();
+    public static String encrypt(int score, String plainText) {
         String chars = " " + "0123456789" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         List<Character> charList = new ArrayList<>();
         for (char c : chars.toCharArray()) {
@@ -14,8 +17,8 @@ public class Encryption {
         List<Character> key = new ArrayList<>(charList);
         Collections.shuffle(key);
         System.out.println(key);
-        String plainText ="Valami123";
-        int score = 4;
+        //String plainText ="Valami123";
+        //int score =apple.applesEaten;
         Set<Character> processedChars = new HashSet<>();
         Set<Character> eredetiChars = new HashSet<>();
 
@@ -30,6 +33,8 @@ public class Encryption {
         String decryptedText = visszafejtes(encryptedText, key, eredetiChars, charList,processedChars,plainText);
 
         System.out.println("decrypted message: " + decryptedText);
+
+        return tikositasPontszerint(score, plainText, processedChars, eredetiChars, charList, key);
     }
 
     public static String szamTitkositas(String plainText, Set<Character> processedChars, Set<Character> eredetiChars, List<Character> chars, List<Character> key) {
