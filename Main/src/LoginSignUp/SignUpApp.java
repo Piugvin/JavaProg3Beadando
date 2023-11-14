@@ -61,10 +61,7 @@ class SignUpApp extends JFrame {
                     preparedStatement = connection.prepareStatement(sql);
                     preparedStatement.setString(1, username);
                     preparedStatement.setString(2, Arrays.toString(password));
-
-                    int rowsAffected = preparedStatement.executeUpdate();
-
-                    if (rowsAffected > 0) {
+                    if (Arrays.equals(password, Cpassword)) {
                         System.out.println("Regisztráció sikeres!");
                         new GameFrame();
                     } else {
