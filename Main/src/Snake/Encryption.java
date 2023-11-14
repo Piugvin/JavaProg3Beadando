@@ -13,26 +13,30 @@ public class Encryption {
         for (char c : chars.toCharArray()) {
             charList.add(c);
         }
-        List<Character> key = new ArrayList<>(charList);
-        Collections.shuffle(key);
-        System.out.println(key);
+        String key="gkZHXi7D28mBpU9e0Lt54McR3OWq6dEfKwFhsvNnAJPYrQuICjSx1yVbzLopTaGyjXq"+" ";
+        List<Character> keyList = new ArrayList<>();
+        for (char k : key.toCharArray()) {
+            charList.add(k);
+        }
+        //Collections.shuffle(key);
+        //System.out.println(key);
         //String plainText ="Valami123";
         //int score =apple.applesEaten;
         Set<Character> processedChars = new HashSet<>();
         Set<Character> eredetiChars = new HashSet<>();
 
-        String encryptedText = tikositasPontszerint(score, plainText, processedChars, eredetiChars, charList, key);
+        String encryptedText = tikositasPontszerint(score, plainText, processedChars, eredetiChars, charList,  keyList);
         String felh = "Felhasznalo";
 
         System.out.println("original message : " + plainText);
         System.out.println("encrypted message: " + encryptedText);
 
 
-        String decryptedText = visszafejtes(encryptedText, key, eredetiChars, charList, processedChars, plainText);
+        String decryptedText = visszafejtes(encryptedText,  keyList, eredetiChars, charList, processedChars, plainText);
 
         System.out.println("decrypted message: " + decryptedText);
 
-        return tikositasPontszerint(score, plainText, processedChars, eredetiChars, charList, key);
+        return tikositasPontszerint(score, plainText, processedChars, eredetiChars, charList,  keyList);
     }
 
     public static String szamTitkositas(String plainText, Set<Character> processedChars, Set<Character> eredetiChars, List<Character> chars, List<Character> key) {

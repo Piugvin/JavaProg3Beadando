@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6c32e99-e4a1-47c5-b73b-0ba007c6a14a" name="Changes" comment="" />
+    <list default="true" id="d6c32e99-e4a1-47c5-b73b-0ba007c6a14a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/LoginSignUp/SignUpApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/LoginSignUp/SignUpApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/Snake/Encryption.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Snake/Encryption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/Snake/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Snake/GameFrame.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -123,6 +129,7 @@
       <workItem from="1699372721600" duration="20000" />
       <workItem from="1699802163783" duration="523000" />
       <workItem from="1699802730925" duration="2997000" />
+      <workItem from="1699975386754" duration="2014000" />
     </task>
     <servers />
   </component>

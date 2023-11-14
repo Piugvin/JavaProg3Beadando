@@ -1,5 +1,6 @@
 package LoginSignUp;
-import Snake.Snake.*;
+
+import Snake.*;
 import java.io.FileInputStream;;
 import java.io.IOException;
 import java.sql.*;
@@ -65,6 +66,7 @@ class SignUpApp extends JFrame {
 
                     if (rowsAffected > 0) {
                         System.out.println("Regisztráció sikeres!");
+                        new GameFrame();
                     } else {
                         System.out.println("Sikertelen regisztráció!");
                     }
@@ -78,6 +80,7 @@ class SignUpApp extends JFrame {
             }
         }else {
             JOptionPane.showMessageDialog(null, "A jelszavak nem egyeznek.");
+
         }
     }
     public static void main(String[] args) {
