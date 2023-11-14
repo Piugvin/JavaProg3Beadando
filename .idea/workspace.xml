@@ -57,7 +57,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.SignUpApp">
     <configuration name="LoginApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="LoginSignUp.LoginApp" />
       <module name="Main" />
@@ -106,9 +106,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SignUpApp" />
         <item itemvalue="Application.com.JavaBe.DBconn.SQLConnection" />
         <item itemvalue="Application.LoginApp" />
-        <item itemvalue="Application.SignUpApp" />
         <item itemvalue="Application.SQLConnection" />
       </list>
     </recent_temporary>
@@ -128,8 +128,13 @@
       <workItem from="1699372469197" duration="49000" />
       <workItem from="1699372721600" duration="20000" />
       <workItem from="1699802163783" duration="523000" />
+<<<<<<< HEAD
       <workItem from="1699802730925" duration="2997000" />
       <workItem from="1699975386754" duration="2014000" />
+=======
+      <workItem from="1699802730925" duration="3364000" />
+      <workItem from="1699978344189" duration="198000" />
+>>>>>>> f2c9b65351957b88191cc05ad229976dc7aaf23b
     </task>
     <servers />
   </component>
