@@ -44,7 +44,7 @@ class SignUpApp extends JFrame {
         String username = usernameField.getText();
         char[] password = passwordField.getPassword();
         char[] Cpassword = CpasswordField.getPassword();
-        if(Cpassword.equals(password)) {
+        if(Arrays.equals(Cpassword, password)) {
             Connection connection = null;
             PreparedStatement preparedStatement;
             final Properties properties = new Properties();
