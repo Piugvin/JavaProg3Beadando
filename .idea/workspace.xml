@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6c32e99-e4a1-47c5-b73b-0ba007c6a14a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/LoginSignUp/SignUpApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/LoginSignUp/SignUpApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/Snake/Encryption.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Snake/Encryption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/Snake/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Snake/GameFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,13 +124,10 @@
       <workItem from="1699372469197" duration="49000" />
       <workItem from="1699372721600" duration="20000" />
       <workItem from="1699802163783" duration="523000" />
-<<<<<<< HEAD
       <workItem from="1699802730925" duration="2997000" />
       <workItem from="1699975386754" duration="2014000" />
-=======
       <workItem from="1699802730925" duration="3364000" />
       <workItem from="1699978344189" duration="198000" />
->>>>>>> f2c9b65351957b88191cc05ad229976dc7aaf23b
     </task>
     <servers />
   </component>
