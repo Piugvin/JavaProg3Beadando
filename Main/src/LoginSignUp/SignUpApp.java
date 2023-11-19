@@ -1,44 +1,51 @@
 package LoginSignUp;
 
 import Snake.*;
+
+import java.awt.*;
 import java.io.FileInputStream;;
 import java.io.IOException;
 import java.sql.*;
 import java.util.Arrays;
 import java.util.Properties;
 import javax.swing.*;
-import java.awt.*;
-class SignUpApp extends JFrame {
-    private JTextField usernameField;
-    private JPasswordField passwordField;
-    private JPasswordField CpasswordField;
-    private JButton signUpButton;
-    public SignUpApp() {
-        setTitle("Regisztráció");
-        setSize(300, 200);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
+public class SignUpApp extends JFrame {
+    JTextField usernameField = new JTextField(20);
+    JPasswordField passwordField = new JPasswordField(20);
+    JPasswordField CpasswordField = new JPasswordField(20);
+    public  SignUpApp() {
+        JFrame register = new JFrame("Regisztráció");
 
         JLabel usernameLabel = new JLabel("Felhasználónév:");
-        JLabel passwordLabel = new JLabel("Jelszó");
+        JLabel passwordLabel = new JLabel("Jelszó:");
+        JLabel CpasswordLabel = new JLabel("Jelszó megerősítés:");
 
-        usernameField = new JTextField(20);
-        passwordField = new JPasswordField(20);
-        CpasswordField = new JPasswordField(20);
+        JButton signUpButton = new JButton("Regisztráció");
 
-        signUpButton = new JButton("Regisztráció");
+        register.setLayout(null);
 
-        setLayout(new GridLayout(3, 2));
-        add(usernameLabel);
-        add(usernameField);
-        add(passwordLabel);
-        add(passwordField);
-        add(CpasswordField);
-        add(new JLabel());
-        add(signUpButton);
+        register.add(usernameLabel);
+        register.add(usernameField);
+        register.add(passwordLabel);
+        register.add(passwordField);
+        register.add(CpasswordLabel);
+        register.add(CpasswordField);
 
-        // Set up the button action listener
+        register.add(signUpButton);
+
+        register.setSize(400, 500);
+        usernameLabel.setBounds(150, 50, 200, 50);
+        usernameField.setBounds(100, 100, 200, 50);
+        passwordLabel.setBounds(179, 150, 200, 50);
+        passwordField.setBounds(100, 200, 200, 50);
+        CpasswordLabel.setBounds(141, 250, 200, 50);
+        CpasswordField.setBounds(100, 300, 200, 50);
+        signUpButton.setBounds(100, 400, 200,50);
+        register.setVisible(true);
+
         signUpButton.addActionListener(e -> signUp());
+        register.setLocationRelativeTo(null);
+        register.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     private void signUp() {
