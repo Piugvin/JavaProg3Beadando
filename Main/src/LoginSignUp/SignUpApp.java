@@ -9,27 +9,17 @@ import java.sql.*;
 import java.util.Arrays;
 import java.util.Properties;
 import javax.swing.*;
-<<<<<<< HEAD
-import java.awt.*;
-public class SignUpApp extends JFrame {
-    private JTextField usernameField;
-    private JPasswordField passwordField;
-    private JPasswordField CpasswordField;
-    private JButton signUpButton;
-    public SignUpApp() {
-        setTitle("Regisztráció");
-        setSize(300, 200);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-=======
 public class SignUpApp extends JFrame {
     JTextField usernameField = new JTextField(20);
     JPasswordField passwordField = new JPasswordField(20);
     JPasswordField CpasswordField = new JPasswordField(20);
     public  SignUpApp() {
         JFrame register = new JFrame("Regisztráció");
->>>>>>> 6b0e47045d323eb6a676c58e2137dd584a2489aa
-
+        //Background
+        ImageIcon background = new ImageIcon(ClassLoader.getSystemResource("Retro Snake Game Background.jpg"));
+        JLabel backgroundLabel = new JLabel(new ImageIcon(background.getImage().getScaledInstance(400, 500, Image.SCALE_SMOOTH)));
+        backgroundLabel.setBounds(0, 0, 400, 500);
+        register.add(backgroundLabel);
         JLabel usernameLabel = new JLabel("Felhasználónév:");
         JLabel passwordLabel = new JLabel("Jelszó:");
         JLabel CpasswordLabel = new JLabel("Jelszó megerősítés:");
@@ -61,7 +51,6 @@ public class SignUpApp extends JFrame {
         register.setLocationRelativeTo(null);
         register.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-    public static String epwd="";
 
     private void signUp() {
         String username = usernameField.getText();
@@ -86,7 +75,6 @@ public class SignUpApp extends JFrame {
                     if (Arrays.equals(password, Cpassword)) {
                         System.out.println("Regisztráció sikeres!");
                         new GameFrame();
-                        epwd= Arrays.toString(password);
                     } else {
                         System.out.println("Sikertelen regisztráció!");
                     }
