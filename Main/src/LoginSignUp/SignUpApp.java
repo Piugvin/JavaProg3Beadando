@@ -9,6 +9,7 @@ import java.sql.*;
 import java.util.Arrays;
 import java.util.Properties;
 import javax.swing.*;
+import java.net.URL;
 public class SignUpApp extends JFrame {
     JTextField usernameField = new JTextField(20);
     JPasswordField passwordField = new JPasswordField(20);
@@ -16,12 +17,18 @@ public class SignUpApp extends JFrame {
     public  SignUpApp() {
         JFrame register = new JFrame("Regisztráció");
         //Background
-        ImageIcon background = new ImageIcon(ClassLoader.getSystemResource("Retro Snake Game Background.jpg"));
-        JLabel backgroundLabel = new JLabel(new ImageIcon(background.getImage().getScaledInstance(400, 500, Image.SCALE_SMOOTH)));
-        ImageIcon scaledBackgroundImage = new ImageIcon(background);
-        JLabel backgroundLabel = new JLabel(scaledBackgroundImage);
-        backgroundLabel.setBounds(0, 0, 400, 500);
-        register.add(backgroundLabel);
+        URL backgroundUrl = ClassLoader.getSystemResource("https://github.com/Piugvin/JavaProg3Beadando/blob/4cc15edd8aea5ad5cc44225bb14dbba912eccc9c/background.jpg?raw=true");
+        if (backgroundUrl != null) {
+            ImageIcon background = new ImageIcon(backgroundUrl);
+            Image backgroundImg = background.getImage().getScaledInstance(400, 500, Image.SCALE_SMOOTH);
+            ImageIcon scaledBackgroundImage = new ImageIcon(backgroundImg);
+            JLabel backgroundLabel = new JLabel(scaledBackgroundImage);
+            backgroundLabel.setBounds(0, 0, 400, 500);
+            register.add(backgroundLabel);
+        } else {
+            System.out.println("Error: background.jpg not found");
+        }
+        //background
         JLabel usernameLabel = new JLabel("Felhasználónév:");
         JLabel passwordLabel = new JLabel("Jelszó:");
         JLabel CpasswordLabel = new JLabel("Jelszó megerősítés:");
@@ -53,7 +60,7 @@ public class SignUpApp extends JFrame {
         register.setLocationRelativeTo(null);
         register.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-
+    public static String epwd="";
     private void signUp() {
         String username = usernameField.getText();
         char[] password = passwordField.getPassword();
@@ -77,6 +84,7 @@ public class SignUpApp extends JFrame {
                     if (Arrays.equals(password, Cpassword)) {
                         System.out.println("Regisztráció sikeres!");
                         new GameFrame();
+                        epwd= Arrays.toString(password);
                     } else {
                         System.out.println("Sikertelen regisztráció!");
                     }
@@ -94,6 +102,6 @@ public class SignUpApp extends JFrame {
         }
     }
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new SignUpApp().setVisible(true));
+        SwingUtilities.invokeLater(() -> new SignUpApp());
     }
 }
