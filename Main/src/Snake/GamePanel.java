@@ -1,5 +1,6 @@
 package Snake;
 
+import LoginSignUp.SignUpApp;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -11,6 +12,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.Random;
+
+import static LoginSignUp.SignUpApp.epwd;
 
 public class GamePanel extends JPanel implements ActionListener {
 
@@ -177,7 +180,7 @@ public class GamePanel extends JPanel implements ActionListener {
         }
         if (!running) {
             timer.stop();
-            String encryptedText = Encryption.encrypt(applesEaten, "Valami123");
+            String encrypt = Encryption.encrypt(applesEaten, epwd);
         }
 
     }

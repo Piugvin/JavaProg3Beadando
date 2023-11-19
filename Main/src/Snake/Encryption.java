@@ -1,5 +1,6 @@
 package Snake;
 
+import LoginSignUp.SignUpApp;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -16,7 +17,7 @@ public class Encryption {
         String key="gkZHXi7D28mBpU9e0Lt54McR3OWq6dEfKwFhsvNnAJPYrQuICjSx1yVbzLopTaGyjXq"+" ";
         List<Character> keyList = new ArrayList<>();
         for (char k : key.toCharArray()) {
-            charList.add(k);
+            keyList.add(k);
         }
         //Collections.shuffle(key);
         //System.out.println(key);
