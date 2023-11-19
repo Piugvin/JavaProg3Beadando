@@ -1,37 +1,55 @@
 package LoginSignUp;
+import Main.*;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.*;
 import java.util.*;
 import javax.swing.*;
-import java.awt.*;
-public class LoginApp extends JFrame {
-    private JTextField usernameField;
-    private JPasswordField passwordField;
-    private JButton loginButton;
+public class LoginApp {
+    JTextField usernameField = new JTextField(20);
+    JPasswordField passwordField = new JPasswordField(20);
+    JPasswordField CpasswordField = new JPasswordField(20);
 
     public LoginApp() {
-        setTitle("Bejelentkezés");
-        setSize(300, 150);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
+        JFrame login = new JFrame("Bejelentkezés");
 
         JLabel usernameLabel = new JLabel("Felhasználónév:");
         JLabel passwordLabel = new JLabel("Jelszó:");
+        JButton loginButton = new JButton("Bejelentkezés");
+        JButton backButton = new JButton("Vissza");
+        login.setLayout(null);
 
-        usernameField = new JTextField(20);
-        passwordField = new JPasswordField(20);
+        login.add(usernameLabel);
+        login.add(usernameField);
+        login.add(passwordLabel);
+        login.add(passwordField);
 
-        loginButton = new JButton("Bejelentkezés");
+        login.add(loginButton);
+        login.add(backButton);
 
-        setLayout(new GridLayout(3, 2));
-        add(usernameLabel);
-        add(usernameField);
-        add(passwordLabel);
-        add(passwordField);
-        add(new JLabel());
-        add(loginButton);
+        login.setSize(400, 500);
+        usernameLabel.setBounds(150, 50, 200, 50);
+        usernameField.setBounds(100, 100, 200, 50);
+        passwordLabel.setBounds(179, 150, 200, 50);
+        passwordField.setBounds(100, 200, 200, 50);
+        loginButton.setBounds(100, 300, 200,50);
+        backButton.setBounds(100, 400, 200,50);
+
+        login.setVisible(true);
         loginButton.addActionListener(e -> login());
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                login.dispose();
+                new Main();
+            }
+        });
+
+        login.setLocationRelativeTo(null);
+        login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     private void login() {
         String username = usernameField.getText();
@@ -69,6 +87,6 @@ public class LoginApp extends JFrame {
         }
     }
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new LoginApp().setVisible(true));
+        SwingUtilities.invokeLater(() -> new LoginApp());
     }
 }
