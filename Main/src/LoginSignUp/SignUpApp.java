@@ -15,7 +15,11 @@ public class SignUpApp extends JFrame {
     JPasswordField CpasswordField = new JPasswordField(20);
     public  SignUpApp() {
         JFrame register = new JFrame("Regisztráció");
-
+        //Background
+        ImageIcon background = new ImageIcon(ClassLoader.getSystemResource("Retro Snake Game Background.jpg"));
+        JLabel backgroundLabel = new JLabel(new ImageIcon(background.getImage().getScaledInstance(400, 500, Image.SCALE_SMOOTH)));
+        backgroundLabel.setBounds(0, 0, 400, 500);
+        register.add(backgroundLabel);
         JLabel usernameLabel = new JLabel("Felhasználónév:");
         JLabel passwordLabel = new JLabel("Jelszó:");
         JLabel CpasswordLabel = new JLabel("Jelszó megerősítés:");
