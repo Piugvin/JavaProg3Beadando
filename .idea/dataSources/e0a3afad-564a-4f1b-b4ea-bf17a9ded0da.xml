@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="JavaDB@80.211.205.244">
   <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.49">
-    <root id="1">
-      <DefaultCasing>exact</DefaultCasing>
-      <DefaultEngine>InnoDB</DefaultEngine>
-      <Grants>JavaDB|schema||java||ALTER|G
-JavaDB|schema||java||ALTER ROUTINE|G
-JavaDB|schema||java||CREATE|G
-JavaDB|schema||java||CREATE ROUTINE|G
-JavaDB|schema||java||CREATE TEMPORARY TABLES|G
-JavaDB|schema||java||CREATE VIEW|G
-JavaDB|schema||java||DELETE|G
-JavaDB|schema||java||DELETE HISTORY|G
-JavaDB|schema||java||DROP|G
-JavaDB|schema||java||EVENT|G
-JavaDB|schema||java||EXECUTE|G
-JavaDB|schema||java||INDEX|G
-JavaDB|schema||java||INSERT|G
-JavaDB|schema||java||LOCK TABLES|G
-JavaDB|schema||java||REFERENCES|G
-JavaDB|schema||java||SELECT|G
-JavaDB|schema||java||SHOW VIEW|G
-JavaDB|schema||java||TRIGGER|G
-JavaDB|schema||java||UPDATE|G</Grants>
-      <ServerVersion>11.1.2</ServerVersion>
-    </root>
+    <root id="1"/>
     <collation id="2" parent="1" name="big5_chinese_ci">
       <Charset>big5</Charset>
       <DefaultForCharset>1</DefaultForCharset>
@@ -1218,12 +1195,36 @@ JavaDB|schema||java||UPDATE|G</Grants>
     <schema id="508" parent="1" name="information_schema">
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
-    <schema id="509" parent="1" name="JavaDB">
-      <Current>1</Current>
-      <IntrospectionTimestamp>2023-11-10.16:35:58</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-11-10.15:35:57</LocalIntrospectionTimestamp>
+    <schema id="509" parent="1" name="performance_schema">
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </schema>
+    <schema id="510" parent="1" name="sys">
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </schema>
+    <schema id="511" parent="1" name="mysql">
       <CollationName>utf8mb4_general_ci</CollationName>
     </schema>
-    <user id="510" parent="1" name="java"/>
+    <schema id="512" parent="1" name="JavaDB">
+      <Current>1</Current>
+      <IntrospectionTimestamp>2023-11-07.01:16:02</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-11-07.00:16:02</LocalIntrospectionTimestamp>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </schema>
+    <user id="513" parent="1" name="mariadb.sys">
+      <Host>localhost</Host>
+    </user>
+    <user id="514" parent="1" name="root">
+      <Host>localhost</Host>
+    </user>
+    <user id="515" parent="1" name="root"/>
+    <user id="516" parent="1" name="healthcheck">
+      <Host>127.0.0.1</Host>
+    </user>
+    <user id="517" parent="1" name="healthcheck">
+      <Host>::1</Host>
+    </user>
+    <user id="518" parent="1" name="healthcheck">
+      <Host>localhost</Host>
+    </user>
   </database-model>
 </dataSource>

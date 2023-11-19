@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.Properties;
 import javax.swing.*;
 import java.awt.*;
-class SignUpApp extends JFrame {
+public class SignUpApp extends JFrame {
     private JTextField usernameField;
     private JPasswordField passwordField;
     private JPasswordField CpasswordField;
@@ -40,6 +40,7 @@ class SignUpApp extends JFrame {
         // Set up the button action listener
         signUpButton.addActionListener(e -> signUp());
     }
+    public static String epwd="";
 
     private void signUp() {
         String username = usernameField.getText();
@@ -64,6 +65,7 @@ class SignUpApp extends JFrame {
                     if (Arrays.equals(password, Cpassword)) {
                         System.out.println("Regisztráció sikeres!");
                         new GameFrame();
+                        epwd= Arrays.toString(password);
                     } else {
                         System.out.println("Sikertelen regisztráció!");
                     }
