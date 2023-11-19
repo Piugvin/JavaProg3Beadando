@@ -1,14 +1,15 @@
 package Snake;
 
 import LoginSignUp.SignUpApp;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.*;
+import java.util.*;
 
 public class Encryption {
-    public static String encrypt(int score, String plainText) {
+    public static String encrypt(int score) {
         String chars = " " + "0123456789" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         List<Character> charList = new ArrayList<>();
         for (char c : chars.toCharArray()) {
@@ -26,20 +27,36 @@ public class Encryption {
         Set<Character> processedChars = new HashSet<>();
         Set<Character> eredetiChars = new HashSet<>();
 
-        String encryptedText = tikositasPontszerint(score, plainText, processedChars, eredetiChars, charList,  keyList);
-        String felh = "Felhasznalo";
-
-        System.out.println("original message : " + plainText);
+        String encryptedText = tikositasPontszerint(score, SignUpApp.epwd, processedChars, eredetiChars, charList,  keyList);
+        String felh = (SignUpApp.usn);
+        System.out.println("original message : " + SignUpApp.epwd);
         System.out.println("encrypted message: " + encryptedText);
-
-
-        String decryptedText = visszafejtes(encryptedText,  keyList, eredetiChars, charList, processedChars, plainText);
-
+        String decryptedText = visszafejtes(encryptedText,  keyList, eredetiChars, charList, processedChars, SignUpApp.epwd);
         System.out.println("decrypted message: " + decryptedText);
-
-        return tikositasPontszerint(score, plainText, processedChars, eredetiChars, charList,  keyList);
+        //DB
+        Connection connection = null;
+        PreparedStatement preparedStatement;
+        final Properties properties = new Properties();
+        try (FileInputStream input = new FileInputStream("Main/src/Database Configuration/DB.properties")) {
+            properties.load(input);
+            String url = properties.getProperty("dburl");
+            String username1 = properties.getProperty("username");
+            String password1 = properties.getProperty("password");
+            connection = DriverManager.getConnection(url, username1, password1);
+            String sql = ("SELECT users WHERE (username) VALUES (?)");
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, felh);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            String insert =("INSERT INTO users WHERE ResultSet = ? (Encrypted_Password, Normal_Password) VALUES(?,?)");
+            preparedStatement = connection.prepareStatement(insert);
+            preparedStatement.setString(1, encryptedText);
+            preparedStatement.setString(2, decryptedText);
+            } catch (IOException | SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return tikositasPontszerint(score, SignUpApp.epwd, processedChars, eredetiChars, charList,  keyList);
     }
-
+    //DB
     public static String szamTitkositas(String plainText, Set<Character> processedChars, Set<Character> eredetiChars, List<Character> chars, List<Character> key) {
         StringBuilder cipherText = new StringBuilder();
         for (char c : plainText.toCharArray()) {
@@ -126,5 +143,9 @@ public class Encryption {
         }
 
         return original.toString();
+    }
+
+    public static String encrypt(int applesEaten, String epwd) {
+        return epwd;
     }
 }

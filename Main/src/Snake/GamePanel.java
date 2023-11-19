@@ -13,8 +13,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 
-import static LoginSignUp.SignUpApp.epwd;
-
 public class GamePanel extends JPanel implements ActionListener {
 
     static final int SCREEN_WIDTH = 1300;
@@ -180,7 +178,7 @@ public class GamePanel extends JPanel implements ActionListener {
         }
         if (!running) {
             timer.stop();
-            String encrypt = Encryption.encrypt(applesEaten, epwd);
+            String encrypt = Encryption.encrypt(applesEaten, SignUpApp.epwd);
         }
 
     }

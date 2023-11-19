@@ -16,6 +16,7 @@ import java.util.Properties;
 import javax.swing.*;
 import java.net.URL;
 public class SignUpApp {
+    public static String usn;
     JTextField usernameField = new JTextField(20);
     JPasswordField passwordField = new JPasswordField(20);
     JPasswordField CpasswordField = new JPasswordField(20);
@@ -76,7 +77,7 @@ public class SignUpApp {
         register.setLocationRelativeTo(null);
         register.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-    public static String epwd="";
+    public static String epwd="", eusn="";
     private void signUp() {
         String username = usernameField.getText();
         char[] password = passwordField.getPassword();
@@ -97,27 +98,25 @@ public class SignUpApp {
                     preparedStatement = connection.prepareStatement(sql);
                     preparedStatement.setString(1, username);
                     preparedStatement.setString(2, Arrays.toString(password));
+                    int rowsAffected = preparedStatement.executeUpdate();
+                    if(rowsAffected > 0) {
                     if (Arrays.equals(password, Cpassword)) {
                         System.out.println("Regisztráció sikeres!");
-                        new GameFrame();
-                        epwd= Arrays.toString(password);
+                         new GameFrame();
+                         eusn = username;
+                         epwd= Arrays.toString(password);
                     } else {
                         System.out.println("Sikertelen regisztráció!");
                     }
-                } catch (SQLException e) {
+                    }
+            }
+                catch (SQLException e) {
                     System.out.println("Sikertelen kapcsolat!");
                     System.err.println("JDBC Error: " + e.getMessage());
                     e.printStackTrace();
                 }
-            } catch (IOException | SQLException e) {
-                throw new RuntimeException(e);
-            }
-        }else {
-            JOptionPane.showMessageDialog(null, "A jelszavak nem egyeznek.");
-
-        }
+            } catch (SQLException | IOException e) {
+                throw new RuntimeException(e);}
     }
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new SignUpApp());
     }
 }
