@@ -18,6 +18,8 @@ public class SignUpApp extends JFrame {
         //Background
         ImageIcon background = new ImageIcon(ClassLoader.getSystemResource("Retro Snake Game Background.jpg"));
         JLabel backgroundLabel = new JLabel(new ImageIcon(background.getImage().getScaledInstance(400, 500, Image.SCALE_SMOOTH)));
+        ImageIcon scaledBackgroundImage = new ImageIcon(background);
+        JLabel backgroundLabel = new JLabel(scaledBackgroundImage);
         backgroundLabel.setBounds(0, 0, 400, 500);
         register.add(backgroundLabel);
         JLabel usernameLabel = new JLabel("Felhasználónév:");
