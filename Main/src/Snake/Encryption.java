@@ -43,14 +43,12 @@ public class Encryption {
             String username1 = properties.getProperty("username");
             String password1 = properties.getProperty("password");
             connection = DriverManager.getConnection(url, username1, password1);
-            String sql = ("SELECT users WHERE (username) VALUES (?)");
-            preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, felh);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            String insert =("INSERT INTO users WHERE ResultSet = ? (Encrypted_Password, Normal_Password) VALUES(?,?)");
+            String insert =("INSERT INTO users (Encrypted_Password=?, Normal_Password=?) SELECT username FROM users WHERE username=?");
             preparedStatement = connection.prepareStatement(insert);
             preparedStatement.setString(1, encryptedText);
             preparedStatement.setString(2, decryptedText);
+            preparedStatement.setString(3, felh);
+            preparedStatement.executeUpdate();
             } catch (IOException | SQLException e) {
             throw new RuntimeException(e);
         }

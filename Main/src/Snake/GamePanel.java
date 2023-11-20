@@ -194,9 +194,10 @@ public class GamePanel extends JPanel implements ActionListener {
         g.setFont(new Font("Ink Free", Font.BOLD, 75));
         FontMetrics metrics2 = getFontMetrics(g.getFont());
         g.drawString("Game Over", (SCREEN_WIDTH - metrics2.stringWidth("Game Over")) / 2, SCREEN_HEIGHT / 2);
-
         if (!running) {
             timer.stop();
+            new Encryption();// Call the onGameEnd method from Snake.GamePanel.Snake class
+
         }
     }
 
