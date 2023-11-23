@@ -1,6 +1,5 @@
 package Snake;
 
-import LoginSignUp.SignUpApp;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -20,8 +19,8 @@ public class GamePanel extends JPanel implements ActionListener {
     static final int UNIT_SIZE = 50;
     static final int GAME_UNITS = (SCREEN_WIDTH * SCREEN_HEIGHT) / (UNIT_SIZE * UNIT_SIZE);
     static final int DELAY = 175;
-    final int x[] = new int[GAME_UNITS];
-    final int y[] = new int[GAME_UNITS];
+    final int[] x = new int[GAME_UNITS];
+    final int[] y = new int[GAME_UNITS];
     int bodyParts = 6; // jelszó határozza majd meg
     int applesEaten;
     int appleX;
@@ -103,8 +102,8 @@ public class GamePanel extends JPanel implements ActionListener {
     }
 
     public void newApple() {
-        appleX = random.nextInt((int) (SCREEN_WIDTH / UNIT_SIZE)) * UNIT_SIZE;
-        appleY = random.nextInt((int) (SCREEN_HEIGHT / UNIT_SIZE)) * UNIT_SIZE;
+        appleX = random.nextInt(SCREEN_WIDTH / UNIT_SIZE) * UNIT_SIZE;
+        appleY = random.nextInt(SCREEN_HEIGHT / UNIT_SIZE) * UNIT_SIZE;
     }
 
 
@@ -150,6 +149,7 @@ public class GamePanel extends JPanel implements ActionListener {
         for (int i = bodyParts; i > 0; i--) {
             if ((x[0] == x[i]) && (y[0] == y[i])) {
                 running = false;
+                break;
             }
         }
         //check if head touches left border
@@ -178,7 +178,6 @@ public class GamePanel extends JPanel implements ActionListener {
         }
         if (!running) {
             timer.stop();
-            String encrypt = Encryption.encrypt(applesEaten, SignUpApp.epwd);
         }
 
     }
@@ -197,7 +196,6 @@ public class GamePanel extends JPanel implements ActionListener {
         if (!running) {
             timer.stop();
             new Encryption();// Call the onGameEnd method from Snake.GamePanel.Snake class
-
         }
     }
 
