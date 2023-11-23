@@ -139,11 +139,12 @@ public class GamePanel extends JPanel implements ActionListener {
                 running = false;
                 timer.stop();
             } else {
-                speedMultiplier = applesEaten / applesForGameOver + 1;
-                timer.setDelay(DELAY / speedMultiplier);
+                speedMultiplier = speedMultiplier + 1;
+                //timer.setDelay(DELAY / speedMultiplier); ez majd vedd ki a kommentből
             }
         }
     }
+
     public void checkCollisions() {
         //checks if head collides with body
         for (int i = bodyParts; i > 0; i--) {
