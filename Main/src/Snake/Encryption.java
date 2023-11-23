@@ -3,7 +3,6 @@ package Snake;
 import LoginSignUp.SignUpApp;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.*;
 import java.util.*;
@@ -20,10 +19,6 @@ public class Encryption {
         for (char k : key.toCharArray()) {
             keyList.add(k);
         }
-        //Collections.shuffle(key);
-        //System.out.println(key);
-        //String plainText ="Valami123";
-        //int score =apple.applesEaten;
         Set<Character> processedChars = new HashSet<>();
         Set<Character> eredetiChars = new HashSet<>();
 
@@ -34,24 +29,30 @@ public class Encryption {
         String decryptedText = visszafejtes(encryptedText,  keyList, eredetiChars, charList, processedChars, SignUpApp.epwd);
         System.out.println("decrypted message: " + decryptedText);
         //DB
-        Connection connection = null;
-        PreparedStatement preparedStatement;
         final Properties properties = new Properties();
         try (FileInputStream input = new FileInputStream("Main/src/Database Configuration/DB.properties")) {
             properties.load(input);
-            String url = properties.getProperty("dburl");
-            String username1 = properties.getProperty("username");
-            String password1 = properties.getProperty("password");
-            connection = DriverManager.getConnection(url, username1, password1);
-            String insert =("INSERT INTO users (Encrypted_Password=?, Normal_Password=?) SELECT username FROM users WHERE username=?");
-            preparedStatement = connection.prepareStatement(insert);
-            preparedStatement.setString(1, encryptedText);
-            preparedStatement.setString(2, decryptedText);
-            preparedStatement.setString(3, felh);
-            preparedStatement.executeUpdate();
-            } catch (IOException | SQLException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        try (Connection connection = DriverManager.getConnection(
+                properties.getProperty("dburl"),
+                properties.getProperty("username"),
+                properties.getProperty("password"))) {
+            String insert = "INSERT INTO users (Encrypted_Password, Normal_Password, username) " +
+                    "VALUES (?, ?, (SELECT username FROM users WHERE username=?))";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(insert)) {
+                preparedStatement.setString(1, encryptedText);
+                preparedStatement.setString(2, decryptedText);
+                preparedStatement.setString(3, felh);
+                preparedStatement.executeUpdate();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        //DB
         return tikositasPontszerint(score, SignUpApp.epwd, processedChars, eredetiChars, charList,  keyList);
     }
     //DB

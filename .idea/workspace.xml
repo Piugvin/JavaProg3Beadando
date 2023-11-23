@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6c32e99-e4a1-47c5-b73b-0ba007c6a14a" name="Changes" comment="">
-<<<<<<< Updated upstream
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/rohoskadavid.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/rohoskadavid.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-=======
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/e0a3afad-564a-4f1b-b4ea-bf17a9ded0da.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e0a3afad-564a-4f1b-b4ea-bf17a9ded0da.xml" afterDir="false" />
->>>>>>> Stashed changes
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/Snake/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Snake/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/Snake/Encryption.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Snake/Encryption.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +97,6 @@
       <workItem from="1699978344189" duration="198000" />
       <workItem from="1700398591907" duration="29000" />
       <workItem from="1700398626324" duration="4098000" />
-<<<<<<< Updated upstream
       <workItem from="1700402739445" duration="5679000" />
       <workItem from="1700408830350" duration="20000" />
       <workItem from="1700408857881" duration="37000" />
@@ -108,7 +104,6 @@
       <workItem from="1700731869507" duration="1159000" />
       <workItem from="1700733098654" duration="692000" />
       <workItem from="1700753664283" duration="150000" />
-=======
       <workItem from="1700402739445" duration="300000" />
       <workItem from="1700444126699" duration="50000" />
       <workItem from="1700476077360" duration="846000" />
@@ -118,7 +113,6 @@
       <workItem from="1700492818126" duration="3438000" />
       <workItem from="1700748462262" duration="2094000" />
       <workItem from="1700750590252" duration="2929000" />
->>>>>>> Stashed changes
     </task>
     <servers />
   </component>

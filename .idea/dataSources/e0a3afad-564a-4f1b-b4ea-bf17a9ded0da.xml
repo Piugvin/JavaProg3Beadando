@@ -1195,36 +1195,12 @@
     <schema id="508" parent="1" name="information_schema">
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
-    <schema id="509" parent="1" name="performance_schema">
-      <CollationName>utf8mb3_general_ci</CollationName>
-    </schema>
-    <schema id="510" parent="1" name="sys">
-      <CollationName>utf8mb3_general_ci</CollationName>
-    </schema>
-    <schema id="511" parent="1" name="mysql">
-      <CollationName>utf8mb4_general_ci</CollationName>
-    </schema>
-    <schema id="512" parent="1" name="JavaDB">
+    <schema id="509" parent="1" name="JavaDB">
       <Current>1</Current>
-      <IntrospectionTimestamp>2023-11-07.01:16:02</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-11-07.00:16:02</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-11-10.16:35:58</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-11-10.15:35:57</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_general_ci</CollationName>
     </schema>
-    <user id="513" parent="1" name="mariadb.sys">
-      <Host>localhost</Host>
-    </user>
-    <user id="514" parent="1" name="root">
-      <Host>localhost</Host>
-    </user>
-    <user id="515" parent="1" name="root"/>
-    <user id="516" parent="1" name="healthcheck">
-      <Host>127.0.0.1</Host>
-    </user>
-    <user id="517" parent="1" name="healthcheck">
-      <Host>::1</Host>
-    </user>
-    <user id="518" parent="1" name="healthcheck">
-      <Host>localhost</Host>
-    </user>
+    <user id="510" parent="1" name="java"/>
   </database-model>
 </dataSource>
