@@ -86,7 +86,4 @@ public class LoginApp {
             throw new RuntimeException(e);
         }
     }
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new LoginApp());
-    }
 }
