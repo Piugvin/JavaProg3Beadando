@@ -140,7 +140,7 @@ public class GamePanel extends JPanel implements ActionListener {
                 timer.stop();
             } else {
                 speedMultiplier = speedMultiplier + 1;
-                //timer.setDelay(DELAY / speedMultiplier); ez majd vedd ki a kommentből
+                timer.setDelay(DELAY / speedMultiplier);
             }
         }
     }
@@ -186,14 +186,14 @@ public class GamePanel extends JPanel implements ActionListener {
     public void gameOver(Graphics g) {
         //Score
         g.setColor(Color.red);
-        g.setFont(new Font("Ink Free", Font.BOLD, 40));
+        g.setFont(new Font("Arial", Font.BOLD, 40));
         FontMetrics metrics1 = getFontMetrics(g.getFont());
-        g.drawString("Score: " + applesEaten, (SCREEN_WIDTH - metrics1.stringWidth("Score: " + applesEaten)) / 2, g.getFont().getSize());
+        g.drawString("Titkosítási pont: " + applesEaten, (SCREEN_WIDTH - metrics1.stringWidth("Titkosítási pont: " + applesEaten)) / 2, g.getFont().getSize());
         //Game Over text
         g.setColor(Color.red);
-        g.setFont(new Font("Ink Free", Font.BOLD, 75));
+        g.setFont(new Font("Arial", Font.BOLD, 75));
         FontMetrics metrics2 = getFontMetrics(g.getFont());
-        g.drawString("Game Over", (SCREEN_WIDTH - metrics2.stringWidth("Game Over")) / 2, SCREEN_HEIGHT / 2);
+        g.drawString("Titkosítás sikeres!", (SCREEN_WIDTH - metrics2.stringWidth("Titkosítás sikeres!")) / 2, SCREEN_HEIGHT / 2);
         if (!running) {
             timer.stop();
             new Encryption();// Call the onGameEnd method from Snake.GamePanel.Snake class
