@@ -32,24 +32,31 @@ public class Encryption {
         final Properties properties = new Properties();
         try (FileInputStream input = new FileInputStream("Main/src/Database Configuration/DB.properties")) {
             properties.load(input);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+
         try (Connection connection = DriverManager.getConnection(
+
                 properties.getProperty("dburl"),
                 properties.getProperty("username"),
-                properties.getProperty("password"))) {
-            String insert = "INSERT INTO users (Encrypted_Password, Normal_Password, username) " +
-                    "VALUES (?, ?, (SELECT username FROM users WHERE username=?))";
+                properties.getProperty("password")))
+
+        {
+            String insert = ("INSERT INTO users (Encrypted_password, Normal_password) VALUES(?,?)");
+
             try (PreparedStatement preparedStatement = connection.prepareStatement(insert)) {
                 preparedStatement.setString(1, encryptedText);
                 preparedStatement.setString(2, decryptedText);
-                preparedStatement.setString(3, felh);
+               // preparedStatement.setString(3, felh);
+                System.out.println(encryptedText);
+                System.out.println(decryptedText);
                 preparedStatement.executeUpdate();
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
         } catch (SQLException e) {
+            System.err.println("JDBC Error: " + e.getMessage());
+            throw new RuntimeException(e);
+        }
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
         //DB

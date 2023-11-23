@@ -172,13 +172,7 @@ public class GamePanel extends JPanel implements ActionListener {
 
         if (!running) {
             timer.stop();
-        }
-        if (!running) {
-            timer.stop();
             new Encryption(); // Call the onGameEnd method from Snake.GamePanel.Snake class
-        }
-        if (!running) {
-            timer.stop();
         }
 
     }
