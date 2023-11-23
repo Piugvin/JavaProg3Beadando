@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6c32e99-e4a1-47c5-b73b-0ba007c6a14a" name="Changes" comment="" />
+    <list default="true" id="d6c32e99-e4a1-47c5-b73b-0ba007c6a14a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/rohoskadavid.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/rohoskadavid.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/Snake/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Snake/GamePanel.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,6 +101,7 @@
       <workItem from="1700492982860" duration="1689000" />
       <workItem from="1700731869507" duration="1159000" />
       <workItem from="1700733098654" duration="692000" />
+      <workItem from="1700753664283" duration="150000" />
     </task>
     <servers />
   </component>
