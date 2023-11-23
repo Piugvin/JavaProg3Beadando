@@ -23,6 +23,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -96,6 +99,7 @@
       <workItem from="1700492982860" duration="1689000" />
       <workItem from="1700731869507" duration="1159000" />
       <workItem from="1700733098654" duration="692000" />
+      <workItem from="1700752507745" duration="1423000" />
     </task>
     <servers />
   </component>
