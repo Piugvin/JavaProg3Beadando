@@ -11,8 +11,6 @@ import javax.swing.*;
 public class LoginApp {
     JTextField usernameField = new JTextField(20);
     JPasswordField passwordField = new JPasswordField(20);
-    JPasswordField CpasswordField = new JPasswordField(20);
-
     public LoginApp() {
         JFrame login = new JFrame("Bejelentkezés");
 

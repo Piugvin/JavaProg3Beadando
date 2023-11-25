@@ -94,29 +94,23 @@ public class SignUpApp {
                 connection = DriverManager.getConnection(url, username1, password1);
                 try {
                     String sql = ("INSERT INTO users (username, password) VALUES (?,?)");
-
                     preparedStatement = connection.prepareStatement(sql);
                     preparedStatement.setString(1, username);
                     preparedStatement.setString(2, Arrays.toString(password));
                     int rowsAffected = preparedStatement.executeUpdate();
                     if(rowsAffected > 0) {
-                    if (Arrays.equals(password, Cpassword)) {
-                        System.out.println("Regisztráció sikeres!");
-                         new GameFrame();
-                         eusn = username;
-                         epwd= Arrays.toString(password);
-                    } else {
-                        System.out.println("Sikertelen regisztráció!");
+                        if (Arrays.equals(password, Cpassword)) {
+                             new GameFrame();
+                             eusn = username;
+                             epwd= Arrays.toString(password);
+                        }
                     }
-                    }
-            }
-                catch (SQLException e) {
-                    System.out.println("Sikertelen kapcsolat!");
-                    System.err.println("JDBC Error: " + e.getMessage());
+            }catch (SQLException e) {
                     e.printStackTrace();
                 }
             } catch (SQLException | IOException e) {
-                throw new RuntimeException(e);}
-    }
+                throw new RuntimeException(e);
+            }
+        }
     }
 }

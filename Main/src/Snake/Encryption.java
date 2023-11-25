@@ -1,12 +1,9 @@
 package Snake;
 
-import LoginSignUp.SignUpApp;
-import Snake.GamePanel.*;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.*;
 import java.util.*;
-
 public class Encryption {
     public static String encrypt(int score, String plainText, String felh) {
         String chars = " " + "0123456789" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -14,7 +11,6 @@ public class Encryption {
         for (char c : chars.toCharArray()) {
             charList.add(c);
         }
-        //String key="gkZHXi7D28mBpU9e0Lt54McR3OWq6dEfKwFhsvNnAJPYrQuICjSx1yVbzLopTaGyjXq"+" ";
         String key="oN2tDPKwLq1VlTGWa3Y5s9yfpeZzvbiXjrM4cuJxh8mQdH6ERSkrnAICoU0gB7FjXqVZLHOB"+" ";
         List<Character> keyList = new ArrayList<>();
         for (char k : key.toCharArray()) {
@@ -22,60 +18,15 @@ public class Encryption {
         }
         Set<Character> processedChars = new HashSet<>();
         Set<Character> eredetiChars = new HashSet<>();
-
         plainText=String.join("",plainText);
         plainText=plainText.replace("[", "").replace("]", "").replace(",", "");
         plainText=plainText.replaceAll("[\\[\\],\\s]", "");
         String encryptedText = String.join("", tikositasPontszerint(score, plainText, processedChars, eredetiChars, charList, keyList, felh));
         encryptedText = encryptedText.replace("[", "").replace("]", "").replace(",", "");
         encryptedText = encryptedText.replaceAll("[\\[\\],\\s]", "");
-        //felh = (SignUpApp.usn);
-        System.out.println("original message : " + plainText);
-        System.out.println(felh);
-        System.out.println("encrypted message: " + encryptedText);
         String decryptedText = String.join("", visszafejtes(encryptedText,  keyList, eredetiChars, charList, plainText));
-        //decryptedText = decryptedText.replace("[", "").replace("]", "").replace(",", "");
-        System.out.println("decrypted message: " + decryptedText);
-<<<<<<< Updated upstream
-        //DB
-        final Properties properties = new Properties();
-        try (FileInputStream input = new FileInputStream("Main/src/Database Configuration/DB.properties")) {
-            properties.load(input);
-
-        try (Connection connection = DriverManager.getConnection(
-
-                properties.getProperty("dburl"),
-                properties.getProperty("username"),
-                properties.getProperty("password")))
-
-        {
-            String insert = ("INSERT INTO users (Encrypted_password, Normal_password) VALUES(?,?)");
-
-            try (PreparedStatement preparedStatement = connection.prepareStatement(insert)) {
-                preparedStatement.setString(1, encryptedText);
-                preparedStatement.setString(2, decryptedText);
-               // preparedStatement.setString(3, felh);
-                System.out.println(encryptedText);
-                System.out.println(decryptedText);
-                preparedStatement.executeUpdate();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-        } catch (SQLException e) {
-            System.err.println("JDBC Error: " + e.getMessage());
-            throw new RuntimeException(e);
-        }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        //DB
-        return tikositasPontszerint(score, SignUpApp.epwd, processedChars, eredetiChars, charList,  keyList);
-=======
-
         return tikositasPontszerint(score, plainText, processedChars, eredetiChars, charList,  keyList,felh);
->>>>>>> Stashed changes
     }
-    //DB
     public static String szamTitkositas(String plainText, Set<Character> processedChars, Set<Character> eredetiChars, List<Character> chars, List<Character> key) {
         StringBuilder cipherText = new StringBuilder();
         for (char c : plainText.toCharArray()) {
@@ -90,7 +41,6 @@ public class Encryption {
         }
         return cipherText.toString();
     }
-
     public static String kisbetuTitkositas(String plainText, Set<Character> processedChars, Set<Character> eredetiChars, List<Character> chars, List<Character> key) {
         StringBuilder cipherText = new StringBuilder();
         for (char c : plainText.toCharArray()) {
@@ -105,7 +55,6 @@ public class Encryption {
         }
         return cipherText.toString();
     }
-
     public static String nagybetuTitkositas(String plainText, Set<Character> processedChars, Set<Character> eredetiChars, List<Character> chars, List<Character> key) {
         StringBuilder cipherText = new StringBuilder();
         for (char c : plainText.toCharArray()) {
@@ -120,7 +69,6 @@ public class Encryption {
         }
         return cipherText.toString();
     }
-
     public static String tikositasPontszerint(int score, String plainText, Set<Character> processedChars, Set<Character> eredetiChars, List<Character> chars, List<Character> key, String felh) {
 
         if (score >= 2) {
@@ -132,8 +80,9 @@ public class Encryption {
         if (score == 4) {
             plainText = nagybetuTitkositas(plainText, processedChars, eredetiChars, chars, key);
         }
+        //DB
         Connection connection = null;
-        PreparedStatement preparedStatement;
+        PreparedStatement preparedStatement = null;
         final Properties properties = new Properties();
         try (FileInputStream input = new FileInputStream("Main/src/Database Configuration/DB.properties")) {
             properties.load(input);
@@ -144,47 +93,37 @@ public class Encryption {
             String insert = "UPDATE users SET Encrypted_password = ? WHERE username = ?";
             preparedStatement = connection.prepareStatement(insert);
             preparedStatement.setString(1, plainText);
-            // preparedStatement.setString(2, decryptedText);
             preparedStatement.setString(2, felh);
             preparedStatement.executeUpdate();
         } catch (IOException | SQLException e) {
             throw new RuntimeException(e);
+        } finally {
+            try {
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+            }
         }
         return plainText;
-
-        //DB
-
     }
-
-
     public static String visszafejtes(String cipherText, List<Character> key, Set<Character> eredetiChars, List<Character> chars, String plainText) {
-        //System.out.println(plainText);
         StringBuilder original = new StringBuilder();
-        //int indexPosition = 0;
-
         for (int i = 0; i < cipherText.length(); i++) {
             char letter = cipherText.charAt(i);
             int index = key.indexOf(letter);
             char eredetiKarakter = plainText.charAt(i);
-
             if (letter == eredetiKarakter) {
-                //original.append("Index " + indexPosition + ": " + eredetiKarakter + " (CipherText: " + letter + ", PlainText: " + eredetiKarakter + ")\n");
                 original.append(eredetiKarakter);
             } else if (eredetiChars.contains(chars.get(index))) {
-                //original.append("Index " + indexPosition + ": " + chars.get(index) + " (CipherText: " + letter + ", PlainText: " + eredetiKarakter + ")\n");
                 original.append(chars.get(index));
             } else {
-                //original.append("Index " + indexPosition + ": " + key.get(index) + " (CipherText: " + letter + ", PlainText: " + eredetiKarakter + ")\n");
                 original.append(key.get(index));
             }
-
-            //indexPosition++;
         }
-
         return original.toString();
     }
-
-    /*public static String encrypt(int applesEaten, String epwd) {
-        return epwd;
-    }*/
 }
