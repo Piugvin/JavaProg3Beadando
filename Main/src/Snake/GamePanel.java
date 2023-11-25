@@ -1,5 +1,8 @@
 package Snake;
 
+import LoginSignUp.LoginApp;
+import LoginSignUp.SignUpApp;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -92,9 +95,9 @@ public class GamePanel extends JPanel implements ActionListener {
 
             }
             g.setColor(Color.red);
-            g.setFont(new Font("Ink Free", Font.BOLD, 40));
+            g.setFont(new Font("Arial", Font.BOLD, 40));
             FontMetrics metrics = getFontMetrics(g.getFont());
-            g.drawString("Score: " + applesEaten, (SCREEN_WIDTH - metrics.stringWidth("Score: " + applesEaten)) / 2, g.getFont().getSize());
+            g.drawString("Titkosítási pont: " + applesEaten, (SCREEN_WIDTH - metrics.stringWidth("Titkosítási pont: " + applesEaten)) / 2, g.getFont().getSize());
         } else {
             gameOver(g);
         }
@@ -169,10 +172,16 @@ public class GamePanel extends JPanel implements ActionListener {
         if (y[0] > SCREEN_HEIGHT) {
             running = false;
         }
+<<<<<<< Updated upstream
 
         if (!running) {
             timer.stop();
             new Encryption(); // Call the onGameEnd method from Snake.GamePanel.Snake class
+=======
+        if (!running) {
+            timer.stop();
+            Encryption.encrypt(applesEaten, SignUpApp.epwd, SignUpApp.eusn); // Call the onGameEnd method from Snake.GamePanel.Snake class
+>>>>>>> Stashed changes
         }
 
     }
@@ -188,11 +197,25 @@ public class GamePanel extends JPanel implements ActionListener {
         g.setFont(new Font("Arial", Font.BOLD, 75));
         FontMetrics metrics2 = getFontMetrics(g.getFont());
         g.drawString("Titkosítás sikeres!", (SCREEN_WIDTH - metrics2.stringWidth("Titkosítás sikeres!")) / 2, SCREEN_HEIGHT / 2);
-        if (!running) {
+        /*if (!running) {
             timer.stop();
-            new Encryption();// Call the onGameEnd method from Snake.GamePanel.Snake class
+            //new Encryption();// Call the onGameEnd method from Snake.GamePanel.Snake class
+            System.exit(0);
+        }*/
+        try {
+            Thread.sleep(2000);
+            System.exit(0);
+            new LoginApp();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
+        finally {
+            new LoginApp();
+        }
+
     }
+
+
 
     @Override
     public void actionPerformed(ActionEvent e) {

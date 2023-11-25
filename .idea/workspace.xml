@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6c32e99-e4a1-47c5-b73b-0ba007c6a14a" name="Changes" comment="">
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e0a3afad-564a-4f1b-b4ea-bf17a9ded0da.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e0a3afad-564a-4f1b-b4ea-bf17a9ded0da.xml" afterDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main/src/Snake/Encryption.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Snake/Encryption.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main/src/Snake/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Snake/GamePanel.java" afterDir="false" />
@@ -116,15 +120,36 @@
       <workItem from="1700492818126" duration="3438000" />
       <workItem from="1700748462262" duration="2094000" />
       <workItem from="1700750590252" duration="2929000" />
+<<<<<<< Updated upstream
       <workItem from="1700758214357" duration="4566000" />
+=======
+      <workItem from="1700764088793" duration="7576000" />
+      <workItem from="1700771754155" duration="17000" />
+      <workItem from="1700811250942" duration="2547000" />
+      <workItem from="1700826868621" duration="94000" />
+      <workItem from="1700826982199" duration="5377000" />
+      <workItem from="1700904924616" duration="10785000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+<<<<<<< Updated upstream
   <component name="UnknownFeatures">
     <option featureType="dependencySupport" implementationName="executable:docker" />
     <option featureType="dependencySupport" implementationName="executable:kubectl" />
+=======
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+>>>>>>> Stashed changes
   </component>
 </project>
