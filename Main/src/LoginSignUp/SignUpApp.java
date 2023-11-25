@@ -4,8 +4,6 @@ import Main.Main;
 import Snake.*;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -15,8 +13,8 @@ import java.util.Arrays;
 import java.util.Properties;
 import javax.swing.*;
 import java.net.URL;
+@SuppressWarnings({"InstantiationOfUtilityClass", "CallToPrintStackTrace"})
 public class SignUpApp {
-    public static String usn;
     JTextField usernameField = new JTextField(20);
     JPasswordField passwordField = new JPasswordField(20);
     JPasswordField CpasswordField = new JPasswordField(20);
@@ -67,12 +65,9 @@ public class SignUpApp {
         register.setVisible(true);
 
         signUpButton.addActionListener(e -> signUp());
-        backButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                register.dispose();
-                new Main();
-            }
+        backButton.addActionListener(e -> {
+            register.dispose();
+            new Main();
         });
         register.setLocationRelativeTo(null);
         register.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -83,7 +78,7 @@ public class SignUpApp {
         char[] password = passwordField.getPassword();
         char[] Cpassword = CpasswordField.getPassword();
         if(Arrays.equals(Cpassword, password)) {
-            Connection connection = null;
+            Connection connection;
             PreparedStatement preparedStatement;
             final Properties properties = new Properties();
             try (FileInputStream input = new FileInputStream("Main/src/Database Configuration/DB.properties")) {

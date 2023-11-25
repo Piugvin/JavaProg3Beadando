@@ -1,13 +1,12 @@
 package LoginSignUp;
-import Main.*;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import Main.*;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.*;
 import java.util.*;
 import javax.swing.*;
+@SuppressWarnings({"InstantiationOfUtilityClass", "CallToPrintStackTrace"})
 public class LoginApp {
     JTextField usernameField = new JTextField(20);
     JPasswordField passwordField = new JPasswordField(20);
@@ -38,12 +37,9 @@ public class LoginApp {
 
         login.setVisible(true);
         loginButton.addActionListener(e -> login());
-        backButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                login.dispose();
-                new Main();
-            }
+        backButton.addActionListener(e -> {
+            login.dispose();
+            new Main();
         });
 
         login.setLocationRelativeTo(null);
@@ -52,7 +48,7 @@ public class LoginApp {
     private void login() {
         String username = usernameField.getText();
         char[] password = passwordField.getPassword();
-        Connection connection = null;
+        Connection connection;
         PreparedStatement preparedStatement;
         final Properties properties = new Properties();
         try (FileInputStream input = new FileInputStream("Main/src/Database Configuration/DB.properties")) {
@@ -62,22 +58,12 @@ public class LoginApp {
             String password1 = properties.getProperty("password");
             connection = DriverManager.getConnection(url, username1, password1);
             try {
-                String sql = ("SELECT users (username, password) VALUES (?,?)");
-
+                String sql = "SELECT users (username, password) VALUES (?,?)";
                 preparedStatement = connection.prepareStatement(sql);
                 preparedStatement.setString(1, username);
                 preparedStatement.setString(2, Arrays.toString(password));
-
-                int rowsAffected = preparedStatement.executeUpdate();
-
-                if (rowsAffected > 0) {
-                    System.out.println("Sikeres Bejelentkezés !");
-                } else {
-                    System.out.println("Sikertelen Bejelentkezés!");
-                }
+                preparedStatement.executeUpdate();
             } catch (SQLException e) {
-                System.out.println("Sikertelen adatbázis kapcsolat!");
-                System.err.println("JDBC Error: " + e.getMessage());
                 e.printStackTrace();
             }
         } catch (IOException | SQLException e) {

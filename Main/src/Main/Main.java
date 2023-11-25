@@ -2,7 +2,6 @@ package Main;
 import javax.swing.*;
 import java.awt.*;
 import LoginSignUp.*;
-
 public class Main {
     public static void main(String[] args) {
         JFrame frame = new JFrame();

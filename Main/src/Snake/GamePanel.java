@@ -15,6 +15,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 
+@SuppressWarnings("CallToPrintStackTrace")
 public class GamePanel extends JPanel implements ActionListener {
     static final int SCREEN_WIDTH = 1300;
     static final int SCREEN_HEIGHT = 750;

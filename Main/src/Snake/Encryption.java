@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.*;
 public class Encryption {
-    public static String encrypt(int score, String plainText, String felh) {
+    public static void encrypt(int score, String plainText, String felh) {
         String chars = " " + "0123456789" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         List<Character> charList = new ArrayList<>();
         for (char c : chars.toCharArray()) {
@@ -21,11 +21,7 @@ public class Encryption {
         plainText=String.join("",plainText);
         plainText=plainText.replace("[", "").replace("]", "").replace(",", "");
         plainText=plainText.replaceAll("[\\[\\],\\s]", "");
-        String encryptedText = String.join("", tikositasPontszerint(score, plainText, processedChars, eredetiChars, charList, keyList, felh));
-        encryptedText = encryptedText.replace("[", "").replace("]", "").replace(",", "");
-        encryptedText = encryptedText.replaceAll("[\\[\\],\\s]", "");
-        String decryptedText = String.join("", visszafejtes(encryptedText,  keyList, eredetiChars, charList, plainText));
-        return tikositasPontszerint(score, plainText, processedChars, eredetiChars, charList,  keyList,felh);
+        tikositasPontszerint(score, plainText, processedChars, eredetiChars, charList, keyList, felh);
     }
     public static String szamTitkositas(String plainText, Set<Character> processedChars, Set<Character> eredetiChars, List<Character> chars, List<Character> key) {
         StringBuilder cipherText = new StringBuilder();
@@ -69,7 +65,7 @@ public class Encryption {
         }
         return cipherText.toString();
     }
-    public static String tikositasPontszerint(int score, String plainText, Set<Character> processedChars, Set<Character> eredetiChars, List<Character> chars, List<Character> key, String felh) {
+    public static void tikositasPontszerint(int score, String plainText, Set<Character> processedChars, Set<Character> eredetiChars, List<Character> chars, List<Character> key, String felh) {
 
         if (score >= 2) {
             plainText = szamTitkositas(plainText, processedChars, eredetiChars, chars, key);
@@ -105,10 +101,9 @@ public class Encryption {
                 if (connection != null) {
                     connection.close();
                 }
-            } catch (SQLException e) {
+            } catch (SQLException ignored) {
             }
         }
-        return plainText;
     }
     public static String visszafejtes(String cipherText, List<Character> key, Set<Character> eredetiChars, List<Character> chars, String plainText) {
         StringBuilder original = new StringBuilder();
