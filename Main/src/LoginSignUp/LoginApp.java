@@ -79,7 +79,7 @@ public class LoginApp {
                         option.add(ok);
                         option.setSize(300, 110);
                         already.setBounds(50, 1, 300, 20);
-                        ok.setBounds(125, 36, 60, 40);
+                        ok.setBounds(125, 30, 60, 40);
                         option.setLocationRelativeTo(null);
                         option.setVisible(true);
                         option.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
