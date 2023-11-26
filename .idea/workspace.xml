@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6c32e99-e4a1-47c5-b73b-0ba007c6a14a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Main/src/LoginSignUp/Accepted.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/LoginSignUp/LoginApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/LoginSignUp/LoginApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/LoginSignUp/SignUpApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/LoginSignUp/SignUpApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/Snake/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Snake/GameFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/Snake/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Snake/GamePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +115,7 @@
       <workItem from="1700924474485" duration="2000" />
       <workItem from="1701004069304" duration="1034000" />
       <workItem from="1701005114502" duration="3812000" />
+      <workItem from="1701010455854" duration="466000" />
     </task>
     <servers />
   </component>

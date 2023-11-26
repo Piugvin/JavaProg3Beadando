@@ -164,17 +164,6 @@ public class GamePanel extends JPanel implements ActionListener {
         g.setFont(new Font("Arial", Font.BOLD, 75));
         FontMetrics metrics2 = getFontMetrics(g.getFont());
         g.drawString("Titkosítás sikeres!", (SCREEN_WIDTH - metrics2.stringWidth("Titkosítás sikeres!")) / 2, SCREEN_HEIGHT / 2);
-        try {
-            Thread.sleep(2000);
-            System.exit(0);
-            new LoginApp();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        finally {
-            new LoginApp();
-        }
-
     }
     @Override
     public void actionPerformed(ActionEvent e) {

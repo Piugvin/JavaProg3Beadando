@@ -63,7 +63,10 @@ public class SignUpApp {
         signUpButton.setBounds(100, 400, 200, 50);
         backButton.setBounds(100, 500, 200, 50);
         register.setVisible(true);
-        signUpButton.addActionListener(e -> signUp());
+        signUpButton.addActionListener(e -> {
+            signUp();
+            register.dispose();
+        });
         backButton.addActionListener(e -> {
             register.dispose();
             new Main();
@@ -71,7 +74,6 @@ public class SignUpApp {
         register.setLocationRelativeTo(null);
         register.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-
     public static String epwd = "", eusn = "";
     public class used {
         public void showusrname() {
