@@ -39,7 +39,7 @@ public class SignUpApp {
         JLabel CpasswordLabel = new JLabel("Jelszó megerősítés:");
 
         JButton signUpButton = new JButton("Regisztráció");
-        JButton backButton = new JButton("Vissza");
+        JButton backButton = new JButton("Mégse");
 
         register.setLayout(null);
         register.add(usernameLabel);
@@ -52,7 +52,7 @@ public class SignUpApp {
         register.add(signUpButton);
         register.add(backButton);
 
-        register.setSize(400, 600);
+        register.setSize(400, 500);
 
         usernameLabel.setBounds(150, 50, 200, 50);
         usernameField.setBounds(100, 100, 200, 50);
@@ -60,8 +60,8 @@ public class SignUpApp {
         passwordField.setBounds(100, 200, 200, 50);
         CpasswordLabel.setBounds(141, 250, 200, 50);
         CpasswordField.setBounds(100, 300, 200, 50);
-        signUpButton.setBounds(100, 400, 200, 50);
-        backButton.setBounds(100, 500, 200, 50);
+        signUpButton.setBounds(100, 350, 200, 50);
+        backButton.setBounds(100, 400, 200, 50);
         register.setVisible(true);
         signUpButton.addActionListener(e -> {
             signUp();
@@ -86,11 +86,11 @@ public class SignUpApp {
             option.add(ok);
             option.setSize(300, 100);
             already.setBounds(50, 1, 200, 20);
-            ok.setBounds(125, 36,30,20);
+            ok.setBounds(125, 36,40,20);
             option.setLocationRelativeTo(null);
             option.setVisible(true);
             option.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-            ok.addActionListener(e -> option.dispose());
+            ok.addActionListener(e -> {option.dispose(); new SignUpApp();});
         }
     }
     private SignUpApp signUp() {

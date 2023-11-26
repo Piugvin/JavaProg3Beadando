@@ -21,7 +21,7 @@ public class LoginApp {
         JLabel usernameLabel = new JLabel("Felhasználónév:");
         JLabel passwordLabel = new JLabel("Jelszó:");
         JButton loginButton = new JButton("Bejelentkezés");
-        JButton backButton = new JButton("Vissza");
+        JButton backButton = new JButton("Mégse");
         login.setLayout(null);
 
         login.add(usernameLabel);
@@ -32,13 +32,13 @@ public class LoginApp {
         login.add(loginButton);
         login.add(backButton);
 
-        login.setSize(400, 500);
+        login.setSize(400, 400);
         usernameLabel.setBounds(150, 50, 200, 50);
         usernameField.setBounds(100, 100, 200, 50);
         passwordLabel.setBounds(179, 150, 200, 50);
         passwordField.setBounds(100, 200, 200, 50);
-        loginButton.setBounds(100, 300, 200, 50);
-        backButton.setBounds(100, 400, 200, 50);
+        loginButton.setBounds(100, 250, 200, 50);
+        backButton.setBounds(100, 300, 200, 50);
 
         login.setVisible(true);
         loginButton.addActionListener(e -> login());

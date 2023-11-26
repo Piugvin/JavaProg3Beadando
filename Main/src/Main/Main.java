@@ -19,8 +19,8 @@ public class Main {
         frame.setSize(300, 100);
         frame.setVisible(true);
 
-        signup.addActionListener(e -> new SignUpApp());
-        login.addActionListener(e -> new LoginApp());
+        signup.addActionListener(e -> {new SignUpApp();});
+        login.addActionListener(e -> {new LoginApp();});
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
