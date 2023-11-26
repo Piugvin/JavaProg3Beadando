@@ -68,7 +68,6 @@ public class LoginApp {
                 statement.setString(2, Arrays.toString(password));
                 try (ResultSet resultSet = statement.executeQuery()) {
                     if (resultSet.next()) {
-                        System.out.println("Bejelentkezés sikeres!");
                         new Accepted();
                     } else {
                         JFrame option = new JFrame("Kérem próbálja újra!");
@@ -87,13 +86,10 @@ public class LoginApp {
                         ok.addActionListener(a -> option.dispose());
                     }
                 } catch (SQLException e) {
-                    System.out.println( e.getMessage());
                 }
             } catch (SQLException e) {
-                System.out.println( e.getMessage());
             }
         } catch (SQLException | IOException e) {
-            System.out.println( e.getMessage());
         }
     }
 }

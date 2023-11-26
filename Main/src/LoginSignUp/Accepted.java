@@ -11,7 +11,6 @@ import java.util.Properties;
 
 public class Accepted {
     public Accepted() {
-        System.out.println("Bejelentkezés sikeres!");
         JFrame acceptedFrame = new JFrame("Adatok");
         JLabel normalLabel = new JLabel("Visszafejtett jelszó:");
         JLabel encryptLabel = new JLabel("Titkosított jelszó:");
@@ -44,7 +43,7 @@ public class Accepted {
         acceptedFrame.add(encryptLabel);
         acceptedFrame.add(jelszavak);
         acceptedFrame.add(button);
-        acceptedFrame.setSize(300, 200);
+        acceptedFrame.setSize(350, 350);
         acceptedFrame.setLocationRelativeTo(null);
         normalLabel.setBounds(10, 50, 200, 20);
         encryptLabel.setBounds(150, 50, 200, 20);
