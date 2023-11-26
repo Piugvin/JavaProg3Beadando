@@ -84,7 +84,7 @@ public class SignUpApp {
             option.setLayout(null);
             option.add(already);
             option.add(ok);
-            option.setSize(300, 100);
+            option.setSize(300, 110);
             already.setBounds(50, 1, 200, 20);
             ok.setBounds(125, 36,60,40);
             option.setLocationRelativeTo(null);
