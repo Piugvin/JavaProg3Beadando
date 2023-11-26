@@ -68,7 +68,6 @@ public class LoginApp {
                 statement.setString(2, Arrays.toString(password));
                 try (ResultSet resultSet = statement.executeQuery()) {
                     if (resultSet.next()) {
-                        System.out.println("Bejelentkezés sikeres!");
                         new Accepted();
                     } else {
                         JFrame option = new JFrame("Kérem próbálja újra!");
@@ -80,20 +79,17 @@ public class LoginApp {
                         option.add(ok);
                         option.setSize(300, 100);
                         already.setBounds(50, 1, 300, 20);
-                        ok.setBounds(125, 36, 100, 50);
+                        ok.setBounds(125, 36, 60, 40);
                         option.setLocationRelativeTo(null);
                         option.setVisible(true);
                         option.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                         ok.addActionListener(a -> option.dispose());
                     }
                 } catch (SQLException e) {
-                    System.out.println( e.getMessage());
                 }
             } catch (SQLException e) {
-                System.out.println( e.getMessage());
             }
         } catch (SQLException | IOException e) {
-            System.out.println( e.getMessage());
         }
     }
 }
