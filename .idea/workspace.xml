@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6c32e99-e4a1-47c5-b73b-0ba007c6a14a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Main/src/LoginSignUp/Accepted.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/LoginSignUp/LoginApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/LoginSignUp/LoginApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,17 +67,6 @@
       <recent name="$PROJECT_DIR$/Main/src/LoginSignUp" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="20" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="Main.Main" />
-      <module name="JavaProg3.Beadando" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -121,6 +112,8 @@
       <workItem from="1700826982199" duration="5377000" />
       <workItem from="1700904924616" duration="10785000" />
       <workItem from="1700924474485" duration="2000" />
+      <workItem from="1701004069304" duration="1034000" />
+      <workItem from="1701005114502" duration="3812000" />
     </task>
     <servers />
   </component>
