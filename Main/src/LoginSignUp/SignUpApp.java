@@ -112,10 +112,10 @@ public class SignUpApp {
                 preparedStatement.setString(1, username);
                 ResultSet resultSet = preparedStatement.executeQuery();
                 if (resultSet.next()) {
-                        SwingUtilities.invokeLater(() -> {
-                            used used = new used();
-                            used.showusrname();
-                        });
+                    SwingUtilities.invokeLater(() -> {
+                        used used = new used();
+                        used.showusrname();
+                    });
                 } else {
                     try {
                         String sql = ("INSERT INTO users (username, password) VALUES (?,?)");
@@ -133,8 +133,11 @@ public class SignUpApp {
                     }
                 }
             } catch (IOException | SQLException e) {
-            throw new RuntimeException(e);
+                throw new RuntimeException(e);
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "A jelszavak nem egyeznek!");
+            return new SignUpApp();
         }
         return null;
     }

@@ -16,6 +16,7 @@ public class Accepted {
         JLabel encryptLabel = new JLabel("Titkosított jelszó:");
         JLabel jelszavak = new JLabel();
         JButton button = new JButton("Jelszavak lekérése!");
+        JButton kilepes = new JButton("Kilépés!");
         String username = LoginApp.usernameField.getText();
         final Properties properties = new Properties();
         try (FileInputStream input = new FileInputStream("Main/src/Database Configuration/DB.properties")) {
@@ -63,5 +64,6 @@ public class Accepted {
                 e.printStackTrace();
             }
         });
+        kilepes.addActionListener(a -> {acceptedFrame.dispose();});
     }
 }
