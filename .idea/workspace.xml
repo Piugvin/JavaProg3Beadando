@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6c32e99-e4a1-47c5-b73b-0ba007c6a14a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Main/src/LoginSignUp/Accepted.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/LoginSignUp/Accepted.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Main/LoginSignUp/file.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Main/file.txt" beforeDir="false" />
-    </list>
+    <list default="true" id="d6c32e99-e4a1-47c5-b73b-0ba007c6a14a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,7 +116,7 @@
       <workItem from="1700936972758" duration="1284000" />
       <workItem from="1700950666197" duration="603000" />
       <workItem from="1701004643324" duration="5292000" />
-      <workItem from="1701102367623" duration="333000" />
+      <workItem from="1701102367623" duration="651000" />
     </task>
     <servers />
   </component>
@@ -134,11 +130,6 @@
           <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Main/src/LoginSignUp/SignUpApp.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
