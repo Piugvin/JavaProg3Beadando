@@ -163,7 +163,14 @@ public class GamePanel extends JPanel implements ActionListener {
         g.setColor(Color.red);
         g.setFont(new Font("Arial", Font.BOLD, 75));
         FontMetrics metrics2 = getFontMetrics(g.getFont());
-        g.drawString("Titkosítás sikeres!", (SCREEN_WIDTH - metrics2.stringWidth("Titkosítás sikeres!")) / 2, SCREEN_HEIGHT / 2);
+        if (applesEaten < 2) {
+            g.drawString("Tikosítás nem történt meg!", (SCREEN_WIDTH - metrics2.stringWidth("Tikosítás nem történt meg!")) / 2, SCREEN_HEIGHT / 2);
+            g.setFont(new Font("Arial", Font.BOLD, 40));
+        }
+        else if (applesEaten >= 2) {
+            g.drawString("Titkosítás sikeres!", (SCREEN_WIDTH - metrics2.stringWidth("Titkosítás sikeres!")) / 2, SCREEN_HEIGHT / 2);
+        }
+
     }
     @Override
     public void actionPerformed(ActionEvent e) {
